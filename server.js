@@ -4,10 +4,20 @@ const pdfParse = require('pdf-parse');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Rate limiting middleware
+const uploadLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 10, // Limit each IP to 10 requests per windowMs
+    message: 'Too many upload requests from this IP, please try again later.',
+    standardHeaders: true,
+    legacyHeaders: false,
+});
 
 // Middleware
 app.use(cors());
@@ -146,7 +156,7 @@ function generateMockQuestions(numQuestions) {
 }
 
 // Routes
-app.post('/api/upload', upload.single('pdf'), async (req, res) => {
+app.post('/api/upload', uploadLimiter, upload.single('pdf'), async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
@@ -165,7 +175,12 @@ app.post('/api/upload', upload.single('pdf'), async (req, res) => {
         const questions = await generateQuestions(text, numQuestions);
 
         // Clean up uploaded file
-        fs.unlinkSync(req.file.path);
+        try {
+            fs.unlinkSync(req.file.path);
+        } catch (err) {
+            console.error('Error deleting uploaded file:', err);
+            // Continue execution even if file deletion fails
+        }
 
         res.json({
             success: true,
