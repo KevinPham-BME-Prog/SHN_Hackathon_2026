@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+main {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    min-height: 400px;
+}
+
+.upload-section {
+    margin-bottom: 40px;
+}
+
+.upload-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px dashed #cbd5e0;
+}
+
+.upload-card h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.file-input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: white;
+    border: 3px dashed #667eea;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-label:hover {
+    background: #f7fafc;
+    border-color: #764ba2;
+    transform: translateY(-2px);
+}
+
+.upload-icon {
+    width: 60px;
+    height: 60px;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+#fileName {
+    color: #4a5568;
+    font-size: 1.1em;
+}
+
+#pdfFile {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #2d3748;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+.btn-demo {
+    padding: 12px 24px;
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-demo:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.results-section {
+    margin-top: 40px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.results-header h2 {
+    color: #2d3748;
+    font-size: 2em;
+}
+
+#questionsContainer {
+    display: grid;
+    gap: 25px;
+}
+
+.question-card {
+    background: #f7fafc;
+    border-left: 5px solid #667eea;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.question-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.question-type {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.type-mc {
+    background: #bee3f8;
+    color: #2c5282;
+}
+
+.type-sa {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.question-text {
+    color: #2d3748;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.options-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.option-item {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.option-item:hover {
+    border-color: #667eea;
+    background: #f7fafc;
+}
+
+.option-item.correct {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.option-label {
+    font-weight: 700;
+    color: #667eea;
+    margin-right: 10px;
+}
+
+.correct-indicator {
+    display: inline-block;
+    margin-left: 10px;
+    color: #48bb78;
+    font-weight: 700;
+}
+
+.sample-answer {
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border-left: 3px solid #48bb78;
+}
+
+.sample-answer-label {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.sample-answer-text {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.error-message {
+    background: #fed7d7;
+    color: #c53030;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #fc8181;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .upload-card {
+        padding: 20px;
+    }
+    
+    .results-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}

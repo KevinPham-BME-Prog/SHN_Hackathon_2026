@@ -1,0 +1,31 @@
+{
+  "name": "shn_hackathon_2026",
+  "version": "1.0.0",
+  "description": "AI-powered question generation website that creates multiple choice and short answer questions from PDF files",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinPham-BME-Prog/SHN_Hackathon_2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KevinPham-BME-Prog/SHN_Hackathon_2026/issues"
+  },
+  "homepage": "https://github.com/KevinPham-BME-Prog/SHN_Hackathon_2026#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "multer": "^2.0.2",
+    "openai": "^6.22.0",
+    "pdf-parse": "^1.1.1"
+  }
+}
