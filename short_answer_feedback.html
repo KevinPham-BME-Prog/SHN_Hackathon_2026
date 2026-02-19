@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Answer Feedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feedback-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .home-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .score-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .score-display {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-label {
+            font-size: 14px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .percentage-display {
+            font-size: 20px;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+
+        .feedback-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+        }
+
+        .feedback-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feedback-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .emoji {
+            font-size: 24px;
+        }
+
+        .topic-name {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+            border-color: #999;
+        }
+
+        .rating-stars {
+            font-size: 36px;
+            margin: 15px 0;
+        }
+
+        .rating-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: #1565c0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .feedback-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .score-display {
+                font-size: 36px;
+            }
+
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <a href="short_answer.html" class="home-btn">← Back to Short Answers</a>
+
+        <h1>📚 Short Answer Feedback</h1>
+        <div class="topic-name" id="topic-name">Topic: </div>
+
+        <div class="score-section">
+            <div class="score-label">Your Score</div>
+            <div class="score-display" id="score-display">0/0</div>
+            <div class="percentage-display" id="percentage-display">0%</div>
+        </div>
+
+        <div class="rating-text" id="rating-text">Great Effort!</div>
+        <div class="rating-stars" id="rating-stars">⭐⭐⭐</div>
+
+        <div class="feedback-section">
+            <h2><span class="emoji">📖</span> Your Understanding Level</h2>
+            <p class="feedback-text" id="understanding-feedback">Your understanding is developing nicely.</p>
+        </div>
+
+        <div class="feedback-section">
+            <h2><span class="emoji">💡</span> Next Steps</h2>
+            <p class="feedback-text" id="next-steps-feedback">Continue practicing to strengthen your knowledge.</p>
+            <div class="tip-box" id="tip-box"></div>
+        </div>
+
+        <div class="button-group">
+            <a href="short_answer.html" class="btn btn-primary">📝 Practice Another Topic</a>
+            <a href="index.html" class="btn btn-secondary">🏠 Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve feedback data from localStorage
+        const feedbackData = JSON.parse(localStorage.getItem('shortAnswerFeedbackData') || '{}');
+
+        if (!feedbackData || feedbackData.score === undefined || feedbackData.score === null) {
+            document.body.innerHTML = '<div class="feedback-container"><h1>No Data Found</h1><p>Please complete a short answer topic first.</p><a href="short_answer.html" class="btn btn-primary" style="margin-top: 20px;">Back to Short Answers</a></div>';
+        } else {
+            const score = feedbackData.score;
+            const totalAnswered = feedbackData.totalAnswered;
+            const topicName = feedbackData.topicName;
+            const percentage = totalAnswered > 0 ? ((score / totalAnswered) * 100) : 0;
+
+            // Update score display
+            document.getElementById('topic-name').textContent = `Topic: ${topicName}`;
+            document.getElementById('score-display').textContent = `${score.toFixed(1)}/${totalAnswered}`;
+            document.getElementById('percentage-display').textContent = `${percentage.toFixed(1)}%`;
+
+            // Generate feedback based on percentage
+            let feedback = generateFeedback(percentage);
+
+            // Update all feedback sections
+            document.getElementById('rating-text').textContent = feedback.rating;
+            document.getElementById('rating-stars').textContent = feedback.stars;
+            document.getElementById('understanding-feedback').textContent = feedback.understanding;
+            document.getElementById('next-steps-feedback').textContent = feedback.nextSteps;
+            document.getElementById('tip-box').innerHTML = feedback.tip;
+        }
+
+        function generateFeedback(percentage) {
+            let feedback = {};
+
+            if (percentage < 25) {
+                feedback.rating = 'Keep Practicing! 💪';
+                feedback.stars = '⭐';
+                feedback.understanding = 'You\'re building foundational knowledge. The material requires more focused study and review to strengthen your understanding.';
+                feedback.nextSteps = 'Please reread your notes and articles to improve your understanding. Consider writing additional notes to solidify key concepts.';
+                feedback.tip = '<strong>📚 Tip:</strong> Try organizing the material by creating concept maps or flashcards. Breaking complex topics into smaller chunks often helps with retention.';
+            } else if (percentage < 50) {
+                feedback.rating = 'Good Progress! 📈';
+                feedback.stars = '⭐⭐';
+                feedback.understanding = 'You have some key concepts written in your notes but you struggled with remembering the topics on the quiz.';
+                feedback.nextSteps = 'Review your notes and identify patterns in the questions you missed. Focus on those specific areas for improvement.';
+                feedback.tip = '<strong>📚 Tip:</strong> Try active recall—close your notes and try to explain concepts from memory, then check your accuracy.';
+            } else if (percentage < 75) {
+                feedback.rating = 'Very Good! 👍';
+                feedback.stars = '⭐⭐⭐⭐';
+                feedback.understanding = 'You remember most key concepts from the article and your notes but you may have struggled with remembering more unique or nuanced concepts.';
+                feedback.nextSteps = 'Focus your review on the edge cases and unique applications of core concepts. These often distinguish mastery from competence.';
+                feedback.tip = '<strong>📚 Tip:</strong> Look for connections between different concepts. Understanding how they relate often helps with recall of the more subtle details.';
+            } else {
+                feedback.rating = 'Excellent Understanding! 🎯';
+                feedback.stars = '⭐⭐⭐⭐⭐';
+                feedback.understanding = 'You have an excellent understanding of key and unique topics. Your deep comprehension is evident in your responses.';
+                feedback.nextSteps = 'Keep up with using your notes for summary of key concepts. Consider helping peers or tackling more advanced material.';
+                feedback.tip = '<strong>📚 Tip:</strong> You\'ve mastered this topic! Challenge yourself with application-based problems or explore related advanced topics to deepen your expertise.';
+            }
+
+            return feedback;
+        }
+
+        // Clear data after displaying
+        // localStorage.removeItem('shortAnswerFeedbackData');
+    </script>
+</body>
+</html>

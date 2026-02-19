@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Answer Questions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        #topic-selector {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        #topic-selector h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .topic-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .topic-btn {
+            padding: 15px 20px;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+
+        .topic-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        #question-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .progress-container {
+            margin-bottom: 25px;
+        }
+
+        .progress-text {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .topic-title {
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        #question-text {
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .answer-section {
+            margin-top: 25px;
+        }
+
+        .reveal-btn {
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .reveal-btn:hover:not(:disabled) {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .reveal-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        #answer-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #4CAF50;
+            margin-top: 15px;
+            display: none;
+            line-height: 1.8;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .user-answer-section {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+        }
+
+        .user-answer-label {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        #user-answer-input {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        #user-answer-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .user-answer-display {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #2196F3;
+            margin-top: 15px;
+            line-height: 1.8;
+            color: #555;
+            font-size: 16px;
+            display: none;
+        }
+
+        .answer-comparison {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .answer-comparison-title {
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .answer-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .answer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer-column-label {
+            font-weight: 600;
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .answer-column-content {
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .your-answer {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            color: #1565c0;
+        }
+
+        .correct-answer {
+            background: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            color: #2e7d32;
+        }
+
+        .submit-answer-btn {
+            padding: 12px 30px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-answer-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .edit-answer-btn {
+            padding: 10px 20px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .edit-answer-btn:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+
+        .assessment-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border: 2px solid #ffc107;
+            display: none;
+        }
+
+        .assessment-label {
+            color: #856404;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .assessment-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .assessment-btn {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: white;
+            color: #333;
+        }
+
+        .assessment-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .assessment-btn.correct {
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .assessment-btn.partial {
+            background: #ff9800;
+            color: white;
+            border-color: #ff9800;
+        }
+
+        .assessment-btn.incorrect {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        .assessment-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            display: none;
+        }
+
+        .score-label {
+            font-size: 12px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .score-value {
+            font-size: 28px;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .answer-pair {
+                grid-template-columns: 1fr;
+            }
+
+            .assessment-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+            border-color: #999;
+        }
+
+        .nav-info {
+            text-align: center;
+            color: #666;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .question-id {
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .keyboard-hint {
+            color: #999;
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            #question-container {
+                padding: 20px;
+            }
+
+            #question-text {
+                font-size: 18px;
+            }
+
+            .topic-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                min-width: 100%;
+            }
+        }
+
+        .back-to-topics {
+            color: #667eea;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-topics:hover {
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-btn">🏠 Home</a>
+
+    <!-- Topic Selector -->
+    <div id="topic-selector">
+        <h2>📖 Short Answer Questions</h2>
+        <p style="color: #666; margin-bottom: 20px;">Select a topic to begin answering short answer questions</p>
+        <div class="topic-buttons" id="topic-list"></div>
+    </div>
+
+    <!-- Question Container -->
+    <div id="question-container">
+        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span class="back-to-topics" onclick="backToTopics()">← Back to Topics</span>
+            <div class="score-display" id="score-display">
+                <div class="score-label">Your Score</div>
+                <div class="score-value"><span id="current-score">0</span>/<span id="total-answered">0</span></div>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-text">
+                <span id="current-question">0</span> of <span id="total-questions">0</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="question-id" id="question-id"></div>
+        <div class="topic-title" id="topic-title"></div>
+        <div id="question-text"></div>
+
+        <div class="user-answer-section">
+            <div class="user-answer-label">✍️ Write Your Answer</div>
+            <textarea id="user-answer-input" placeholder="Type your answer here..."></textarea>
+            <button class="submit-answer-btn" id="submit-answer-btn" onclick="submitUserAnswer()">Submit Your Answer</button>
+        </div>
+
+        <div class="answer-comparison" id="answer-comparison">
+            <div class="answer-comparison-title">📊 Answer Comparison</div>
+            <div class="answer-pair">
+                <div class="answer-column">
+                    <div class="answer-column-label">Your Answer</div>
+                    <div class="answer-column-content your-answer" id="displayed-user-answer"></div>
+                </div>
+                <div class="answer-column">
+                    <div class="answer-column-label">Correct Answer</div>
+                    <div class="answer-column-content correct-answer" id="displayed-correct-answer"></div>
+                </div>
+            </div>
+            <button class="edit-answer-btn" onclick="editAnswer()">✏️ Edit Your Answer</button>
+
+            <div class="assessment-section" id="assessment-section">
+                <label class="assessment-label">How did you do on this question?</label>
+                <div class="assessment-buttons">
+                    <button class="assessment-btn correct" onclick="markAnswer('correct')">✅ I was correct</button>
+                    <button class="assessment-btn partial" onclick="markAnswer('partial')">⭐ I was partially correct</button>
+                    <button class="assessment-btn incorrect" onclick="markAnswer('incorrect')">❌ I was incorrect</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="answer-section">
+            <button class="reveal-btn" id="reveal-btn" onclick="revealAnswer()">Show Suggested Answer</button>
+            <div id="answer-text"></div>
+        </div>
+
+        <div class="keyboard-hint">💡 Press SPACE to show suggested answer | Ctrl+Enter to submit answer | Use arrow keys to navigate</div>
+
+        <div class="button-group">
+            <button class="btn btn-secondary" id="prev-btn" onclick="previousQuestion()" disabled>← Previous</button>
+            <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Next →</button>
+        </div>
+
+        <div class="nav-info" id="nav-info"></div>
+    </div>
+
+    <script>
+        let allQuestions = [];
+        let currentTopicQuestions = [];
+        let currentQuestionIndex = 0;
+        let currentTopic = '';
+        let answerRevealed = false;
+
+        async function loadQuestions() {
+            try {
+                const response = await fetch('short_answer_questions_full.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                allQuestions = data;
+                displayTopics();
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                document.getElementById('topic-list').innerHTML = '<p style="color: red;">Error loading questions. Please refresh the page.</p>';
+            }
+        }
+
+        function displayTopics() {
+            const topicList = document.getElementById('topic-list');
+            topicList.innerHTML = '';
+
+            for (const topic in allQuestions) {
+                const btn = document.createElement('button');
+                btn.className = 'topic-btn';
+                btn.textContent = topic;
+                btn.onclick = () => selectTopic(topic);
+                topicList.appendChild(btn);
+            }
+        }
+
+        function selectTopic(topic) {
+            currentTopic = topic;
+            currentTopicQuestions = allQuestions[topic] || [];
+            currentQuestionIndex = 0;
+            answerRevealed = false;
+            
+            // Reset score tracking for new topic
+            totalScore = 0;
+            questionsAnswered = 0;
+            userAssessments = {};
+
+            document.getElementById('topic-selector').style.display = 'none';
+            document.getElementById('question-container').style.display = 'block';
+
+            loadQuestion();
+        }
+
+        function backToTopics() {
+            document.getElementById('question-container').style.display = 'none';
+            document.getElementById('topic-selector').style.display = 'block';
+            answerRevealed = false;
+            // Reset score tracking after finishing
+            totalScore = 0;
+            questionsAnswered = 0;
+            userAssessments = {};
+            document.getElementById('score-display').style.display = 'none';
+            document.getElementById('current-score').textContent = '0';
+            document.getElementById('total-answered').textContent = '0';
+        }
+
+        function finishTopic() {
+            // Show feedback page if they answered questions
+            if (questionsAnswered > 0) {
+                const feedbackData = {
+                    score: totalScore,
+                    totalAnswered: questionsAnswered,
+                    topicName: currentTopic,
+                    percentage: ((totalScore / questionsAnswered) * 100).toFixed(1)
+                };
+                localStorage.setItem('shortAnswerFeedbackData', JSON.stringify(feedbackData));
+                window.location.href = 'short_answer_feedback.html';
+            } else {
+                backToTopics();
+            }
+        }
+
+        function loadQuestion() {
+            if (currentTopicQuestions.length === 0) {
+                document.getElementById('question-text').textContent = 'No questions available';
+                return;
+            }
+
+            answerRevealed = false;
+            const question = currentTopicQuestions[currentQuestionIndex];
+
+            document.getElementById('question-id').textContent = question.id || '';
+            document.getElementById('topic-title').textContent = currentTopic;
+            document.getElementById('question-text').textContent = question.question;
+            document.getElementById('answer-text').textContent = question.answer;
+            document.getElementById('answer-text').style.display = 'none';
+
+            // Reset user answer section
+            document.getElementById('user-answer-input').value = '';
+            document.getElementById('user-answer-input').style.display = 'block';
+            document.getElementById('submit-answer-btn').style.display = 'block';
+            document.getElementById('answer-comparison').style.display = 'none';
+            document.getElementById('assessment-section').style.display = 'none';
+
+            document.getElementById('current-question').textContent = currentQuestionIndex + 1;
+            document.getElementById('total-questions').textContent = currentTopicQuestions.length;
+
+            const progressPercent = ((currentQuestionIndex + 1) / currentTopicQuestions.length) * 100;
+            document.getElementById('progress-fill').style.width = progressPercent + '%';
+
+            document.getElementById('reveal-btn').textContent = 'Show Suggested Answer';
+            document.getElementById('reveal-btn').disabled = false;
+
+            document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
+            const isLastQuestion = currentQuestionIndex === currentTopicQuestions.length - 1;
+            document.getElementById('next-btn').textContent = isLastQuestion ? 'Finish' : 'Next →';
+
+            updateNavInfo();
+        }
+
+        function revealAnswer() {
+            if (!answerRevealed) {
+                document.getElementById('answer-text').style.display = 'block';
+                document.getElementById('reveal-btn').textContent = 'Hide Suggested Answer';
+                answerRevealed = true;
+            } else {
+                document.getElementById('answer-text').style.display = 'none';
+                document.getElementById('reveal-btn').textContent = 'Show Suggested Answer';
+                answerRevealed = false;
+            }
+        }
+
+        function submitUserAnswer() {
+            const userAnswer = document.getElementById('user-answer-input').value.trim();
+
+            if (!userAnswer) {
+                alert('Please write an answer before submitting.');
+                return;
+            }
+
+            // Hide input and show comparison
+            document.getElementById('user-answer-input').style.display = 'none';
+            document.getElementById('submit-answer-btn').style.display = 'none';
+
+            // Display comparison
+            document.getElementById('displayed-user-answer').textContent = userAnswer;
+            const question = currentTopicQuestions[currentQuestionIndex];
+            document.getElementById('displayed-correct-answer').textContent = question.answer;
+            document.getElementById('answer-comparison').style.display = 'block';
+            
+            // Show assessment section
+            document.getElementById('assessment-section').style.display = 'block';
+            document.getElementById('score-display').style.display = 'block';
+        }
+
+        function editAnswer() {
+            document.getElementById('user-answer-input').style.display = 'block';
+            document.getElementById('submit-answer-btn').style.display = 'block';
+            document.getElementById('answer-comparison').style.display = 'none';
+            document.getElementById('assessment-section').style.display = 'none';
+        }
+
+        function markAnswer(assessment) {
+            let points = 0;
+            if (assessment === 'correct') {
+                points = 1;
+            } else if (assessment === 'partial') {
+                points = 0.5;
+            } else if (assessment === 'incorrect') {
+                points = 0;
+            }
+
+            // Record the assessment
+            const qId = currentTopicQuestions[currentQuestionIndex].id;
+            
+            // Check if this is first time scoring this question
+            if (!userAssessments[qId]) {
+                userAssessments[qId] = { assessment: assessment, points: points };
+                totalScore += points;
+                questionsAnswered += 1;
+            } else {
+                // Update existing score
+                const oldPoints = userAssessments[qId].points;
+                userAssessments[qId] = { assessment: assessment, points: points };
+                totalScore = totalScore - oldPoints + points;
+            }
+
+            // Update score display
+            document.getElementById('current-score').textContent = totalScore.toFixed(1);
+            document.getElementById('total-answered').textContent = questionsAnswered;
+
+            // Disable all assessment buttons after selection
+            const buttons = document.querySelectorAll('.assessment-btn');
+            buttons.forEach(btn => btn.disabled = true);
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < currentTopicQuestions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+                // Enable assessment buttons for new question
+                const buttons = document.querySelectorAll('.assessment-btn');
+                buttons.forEach(btn => btn.disabled = false);
+            } else {
+                finishTopic();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+                // Enable assessment buttons for new question
+                const buttons = document.querySelectorAll('.assessment-btn');
+                buttons.forEach(btn => btn.disabled = false);
+            }
+        }
+
+        function finishTopic() {
+            // Redirect to feedback page with score data
+            if (questionsAnswered > 0) {
+                const feedbackData = {
+                    score: totalScore,
+                    totalAnswered: questionsAnswered,
+                    topicName: currentTopic,
+                    percentage: ((totalScore / questionsAnswered) * 100).toFixed(1)
+                };
+                localStorage.setItem('shortAnswerFeedbackData', JSON.stringify(feedbackData));
+                window.location.href = 'short_answer_feedback.html';
+            } else {
+                // No questions answered, just return to topics
+                backToTopics();
+            }
+        }
+
+        function updateNavInfo() {
+            const remaining = currentTopicQuestions.length - currentQuestionIndex - 1;
+            if (remaining === 0) {
+                document.getElementById('nav-info').textContent = 'Last question! Click "Finish" to return to topics.';
+            } else {
+                document.getElementById('nav-info').textContent = `${remaining} more question${remaining !== 1 ? 's' : ''} in this topic`;
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('question-container').style.display === 'block') {
+                if (e.code === 'Space' && !e.ctrlKey && !e.shiftKey) {
+                    e.preventDefault();
+                    revealAnswer();
+                } else if (e.code === 'ArrowRight') {
+                    nextQuestion();
+                } else if (e.code === 'ArrowLeft') {
+                    previousQuestion();
+                } else if (e.ctrlKey && e.code === 'Enter') {
+                    e.preventDefault();
+                    const userAnswerInput = document.getElementById('user-answer-input');
+                    if (userAnswerInput.style.display !== 'none') {
+                        submitUserAnswer();
+                    }
+                }
+            }
+        });
+
+        // Initialize
+        loadQuestions();
+    </script>
+</body>
+</html>

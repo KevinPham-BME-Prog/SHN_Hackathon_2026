@@ -1,0 +1,272 @@
+{
+  "Metformin First-Line Therapy": [
+    {
+      "id": "T1-Q1",
+      "question": "Why is metformin recommended as the first-line pharmacologic therapy for most adults with type 2 diabetes?",
+      "answer": "Metformin is preferred first-line because it reliably lowers A1C, carries minimal hypoglycemia risk, does not cause weight gain, has a long-established safety record, and has demonstrated cardiovascular and all-cause mortality benefits in people with overweight in the UKPDS trial. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T1-Q2",
+      "question": "How should metformin be initiated to minimize gastrointestinal intolerance?",
+      "answer": "Metformin should be started at 250–500 mg twice daily with meals and titrated gradually over several weeks up to approximately 2,000 mg per day to reduce gastrointestinal side effects. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T1-Q3",
+      "question": "Which clinical situations contraindicate the use of metformin?",
+      "answer": "Metformin is contraindicated in people with a history of lactic acidosis, severe hepatic dysfunction, or an eGFR below 15 mL/min/1.73m². (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T1-Q4",
+      "question": "What level of A1C reduction can be expected from metformin monotherapy?",
+      "answer": "Metformin monotherapy typically reduces A1C by about 0.5–1.5%, with full effect reached by 3–6 months depending on baseline A1C. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T1-Q5",
+      "question": "What evidence supports the cardiovascular benefit of metformin?",
+      "answer": "The UKPDS 34 study demonstrated that metformin reduced cardiovascular events and all-cause mortality among newly diagnosed adults with overweight. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Immediate Insulin Initiation": [
+    {
+      "id": "T2-Q1",
+      "question": "In which clinical situations should insulin be initiated immediately at diagnosis?",
+      "answer": "Insulin should be initiated immediately in settings of metabolic decompensation, including marked hyperglycemia, ketosis, hyperosmolar state, unintentional weight loss, or severe symptomatic hyperglycemia. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T2-Q2",
+      "question": "Why may metformin still be started alongside insulin in severe hyperglycemia?",
+      "answer": "Metformin can improve glycemic control without increasing hypoglycemia risk and may support later insulin tapering when metabolic stability is regained. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T2-Q3",
+      "question": "How does marked hyperglycemia without metabolic decompensation influence initial therapy choice?",
+      "answer": "When A1C is more than 1.5% above target without metabolic instability, dual non-insulin therapy is recommended to achieve faster glycemic improvement. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T2-Q4",
+      "question": "What symptoms indicate severe hyperglycemia requiring insulin therapy?",
+      "answer": "Symptoms such as polyuria, polydipsia, visual blurring, and unintentional weight loss indicate glucose toxicity and the need for prompt insulin therapy. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T2-Q5",
+      "question": "Can insulin be tapered after stabilization, and if so, when?",
+      "answer": "Yes. Once metabolic stabilization is achieved, insulin may be tapered or discontinued while transitioning to other antihyperglycemic agents. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Combination Therapy at Diagnosis": [
+    {
+      "id": "T3-Q1",
+      "question": "Why is combination therapy recommended when presenting A1C is more than 1.5% above target?",
+      "answer": "Combination therapy is recommended because monotherapy is unlikely to produce adequate glycemic improvement when A1C exceeds target by more than 1.5%. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T3-Q2",
+      "question": "What advantages does initiating dual therapy provide over metformin alone?",
+      "answer": "Dual therapy yields an additional 0.4–1.0% A1C reduction and substantially increases the likelihood of achieving target A1C within six months. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T3-Q3",
+      "question": "Why should drugs with similar mechanisms not be combined?",
+      "answer": "Agents with similar mechanisms, such as sulfonylureas and meglitinides, offer little additional benefit and increase adverse event risk. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T3-Q4",
+      "question": "Which factors should guide selection of the second agent added to metformin?",
+      "answer": "Selection should consider comorbidities, desired weight effect, hypoglycemia risk, cost, preferences, and the amount of A1C reduction needed. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T3-Q5",
+      "question": "Why is SGLT2 inhibitor glycemic efficacy reduced in CKD?",
+      "answer": "Because SGLT2 inhibitors rely on filtered glucose load, declining eGFR reduces their glycemic-lowering capacity. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "SGLT2i and GLP-1 RA Cardiorenal Protection": [
+    {
+      "id": "T4-Q1",
+      "question": "Which GLP-1 receptor agonists demonstrate proven cardiovascular benefit?",
+      "answer": "Liraglutide, dulaglutide, and subcutaneous semaglutide have demonstrated reductions in major cardiovascular events. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T4-Q2",
+      "question": "Which SGLT2 inhibitors have demonstrated major cardiovascular event reduction?",
+      "answer": "Empagliflozin and canagliflozin have shown major cardiovascular event reduction in outcomes trials. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T4-Q3",
+      "question": "What evidence supports SGLT2 inhibitor use in heart failure?",
+      "answer": "SGLT2 inhibitors reduce heart failure hospitalization and cardiovascular death in both diabetic and non-diabetic populations. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T4-Q4",
+      "question": "Which SGLT2 inhibitors demonstrate renal protective effects?",
+      "answer": "Canagliflozin, dapagliflozin, and empagliflozin have shown significant renal protection in trials such as CREDENCE, DAPA-CKD, and EMPA-KIDNEY. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T4-Q5",
+      "question": "Why should cardiorenal-protective agents be started even when A1C is at target?",
+      "answer": "Cardiorenal benefits occur independently of glucose lowering, so initiation is appropriate regardless of current A1C. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Treatment Intensification": [
+    {
+      "id": "T5-Q1",
+      "question": "Why is progressive treatment intensification often necessary in type 2 diabetes?",
+      "answer": "Because progressive beta-cell decline leads to deteriorating endogenous insulin production, reducing response to previous therapy. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T5-Q2",
+      "question": "What timeframe is recommended for achieving glycemic improvement after intensification?",
+      "answer": "Therapeutic changes should achieve improved A1C within 3–6 months; if not, further intensification is recommended. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T5-Q3",
+      "question": "What clinical assessments should occur before intensifying therapy?",
+      "answer": "Clinicians should evaluate for reversible contributors such as infection, ischemia, medication changes, dietary shifts, and adherence barriers. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T5-Q4",
+      "question": "Why are GLP‑1 RAs and SGLT2 inhibitors favored when avoiding hypoglycemia?",
+      "answer": "These agents have negligible hypoglycemia risk when used without insulin or secretagogues. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T5-Q5",
+      "question": "How should comorbidities influence intensification strategy?",
+      "answer": "Those with ASCVD, HF, or CKD should preferentially receive agents with proven outcome benefits, such as GLP‑1 RAs or SGLT2 inhibitors. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Comparative Drug Class Efficacy/Safety": [
+    {
+      "id": "T6-Q1",
+      "question": "How do major antihyperglycemic drug classes differ in weight effects?",
+      "answer": "Insulin, sulfonylureas, and TZDs cause weight gain; DPP‑4 inhibitors are weight‑neutral; GLP‑1 RAs and SGLT2 inhibitors promote weight loss. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T6-Q2",
+      "question": "Which drug classes pose the lowest hypoglycemia risk?",
+      "answer": "GLP‑1 RAs, SGLT2 inhibitors, DPP‑4 inhibitors, and TZDs have low hypoglycemia risk unless combined with insulin or sulfonylureas. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T6-Q3",
+      "question": "Why does SGLT2 inhibitor efficacy decline as eGFR decreases?",
+      "answer": "Reduced kidney function lowers glucose filtration, diminishing the drug’s ability to promote glucosuria. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T6-Q4",
+      "question": "Why do insulin and sulfonylureas carry higher hypoglycemia risk?",
+      "answer": "Because they increase insulin levels independent of blood glucose, making hypoglycemia more likely. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T6-Q5",
+      "question": "Which class has the greatest A1C-lowering potential?",
+      "answer": "Insulin has the greatest A1C-lowering potential because it has no upper dose limit, although hypoglycemia constrains dosing. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Cardiorenal Outcome Evidence (Trials)": [
+    {
+      "id": "T7-Q1",
+      "question": "Which GLP‑1 RA trials demonstrated reductions in cardiovascular events?",
+      "answer": "LEADER, REWIND, and SUSTAIN‑6 showed significant reductions in cardiovascular events among high‑risk individuals. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T7-Q2",
+      "question": "Which SGLT2 inhibitor trial first demonstrated cardiovascular and mortality benefits?",
+      "answer": "EMPA‑REG OUTCOME showed that empagliflozin reduced both cardiovascular death and all‑cause mortality. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T7-Q3",
+      "question": "Which trials established renal protective effects of SGLT2 inhibitors?",
+      "answer": "CREDENCE, DAPA‑CKD, and EMPA‑KIDNEY demonstrated slowed CKD progression and reductions in renal and cardiovascular endpoints. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T7-Q4",
+      "question": "How did heart failure trials demonstrate benefits independent of diabetes status?",
+      "answer": "Trials such as DAPA‑HF and EMPEROR‑Reduced showed reductions in HF hospitalization and cardiovascular death in participants regardless of diabetes status. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T7-Q5",
+      "question": "Why are MACE benefits less consistent in individuals with risk factors but no established ASCVD?",
+      "answer": "Trials showed more robust and consistent MACE reduction among patients with established ASCVD; benefit in those with only risk factors was less certain. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Insulin Therapy Progression": [
+    {
+      "id": "T8-Q1",
+      "question": "What is the recommended first step when adding insulin for fasting hyperglycemia?",
+      "answer": "The recommended first step is starting once‑daily basal insulin, such as NPH or a long‑acting analogue, titrated to fasting glucose targets. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T8-Q2",
+      "question": "Why are long‑acting insulin analogues often preferred over NPH?",
+      "answer": "Long‑acting analogues reduce symptomatic, nocturnal, and severe hypoglycemia compared with NPH insulin. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T8-Q3",
+      "question": "Describe the stepwise approach for adding prandial insulin.",
+      "answer": "A single bolus dose is added at the largest meal initially, with additional doses added only if needed to improve post‑prandial control. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T8-Q4",
+      "question": "Which non‑insulin therapies should continue when basal insulin is initiated?",
+      "answer": "GLP‑1 RAs and SGLT2 inhibitors should be continued or initiated because they improve glycemic outcomes and reduce insulin requirements. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T8-Q5",
+      "question": "Which medications should be discontinued once bolus insulin is added and why?",
+      "answer": "Sulfonylureas and meglitinides should be discontinued due to increased hypoglycemia risk when combined with mealtime insulin. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Combining Insulin With Other Agents": [
+    {
+      "id": "T9-Q1",
+      "question": "Why are GLP‑1 RAs and SGLT2 inhibitors beneficial when used with insulin therapy?",
+      "answer": "They reduce insulin dose requirements, limit weight gain or promote weight loss, and maintain low hypoglycemia risk. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T9-Q2",
+      "question": "How does combining metformin with insulin compare with insulin alone?",
+      "answer": "Metformin with insulin leads to less weight gain, lower insulin requirements, and fewer hypoglycemic events compared with insulin monotherapy. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T9-Q3",
+      "question": "Why should sulfonylureas be discontinued after adding mealtime insulin?",
+      "answer": "Sulfonylureas increase hypoglycemia risk when used with prandial insulin and offer little additional glycemic benefit. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T9-Q4",
+      "question": "What benefits do SGLT2 inhibitors provide for people on multiple daily injections?",
+      "answer": "SGLT2 inhibitors improve glycemia, reduce total insulin dose, and promote weight loss without increasing hypoglycemia. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T9-Q5",
+      "question": "How does combining a GLP‑1 RA with basal insulin compare with full basal‑bolus therapy?",
+      "answer": "GLP‑1 RA plus basal insulin can provide comparable A1C reduction with fewer injections, less weight gain, and less hypoglycemia than full basal‑bolus regimens. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ],
+  "Special Populations and Safety Considerations": [
+    {
+      "id": "T10-Q1",
+      "question": "Why should GLP‑1 RAs and SGLT2 inhibitors be discontinued during pregnancy?",
+      "answer": "Safety data during pregnancy are lacking, so these medications should be discontinued when pregnancy is planned or confirmed. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T10-Q2",
+      "question": "What nutrient deficiency is associated with long‑term metformin therapy?",
+      "answer": "Long‑term metformin therapy is associated with vitamin B12 deficiency, especially in individuals with anemia or neuropathy symptoms. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T10-Q3",
+      "question": "What serious metabolic complication is linked to SGLT2 inhibitor therapy?",
+      "answer": "SGLT2 inhibitors can cause diabetic ketoacidosis, including euglycemic DKA, particularly during illness, dehydration, or low carbohydrate intake. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T10-Q4",
+      "question": "What infection risk is increased with SGLT2 inhibitors?",
+      "answer": "Genital mycotic infections are more common due to glucosuria, though typically mild and treatable. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    },
+    {
+      "id": "T10-Q5",
+      "question": "How does the guideline summarize pancreatitis risk with incretin-based therapies?",
+      "answer": "Current evidence does not show a conclusive increase in pancreatitis risk with incretin therapies, though patients with prior pancreatitis should be monitored carefully. (Diabetes Canada Clinical Practice Guidelines Expert Working Group et al., 2024)"
+    }
+  ]
+}

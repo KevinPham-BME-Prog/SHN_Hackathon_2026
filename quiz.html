@@ -369,6 +369,11 @@
                     </div>
                 </div>
             </div>
+            
+            <div style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+                <a href="feedback.html" style="flex: 1; min-width: 150px; padding: 12px 30px; background: linear-gradient(90deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 8px; text-align: center; font-weight: bold; cursor: pointer; transition: all 0.3s;">📊 View Detailed Feedback</a>
+                <a href="question-bank.html" style="flex: 1; min-width: 150px; padding: 12px 30px; background: #4CAF50; color: white; text-decoration: none; border-radius: 8px; text-align: center; font-weight: bold; cursor: pointer; transition: all 0.3s;">📚 Take Another Quiz</a>
+            </div>
         </div>
     </div>
 
@@ -774,7 +779,7 @@
             `;
             
             const currentConfidence = Math.max(0, Math.min(100, 50 + totalConfidence * 5));
-            const totalTimeSeconds = Math.floor((Date.now() - quizStartTime) / 1000);
+            const totalTimeSeconds = Math.floor((elapsedBeforePause + (Date.now() - quizStartTime)) / 1000);
             const minutes = String(Math.floor(totalTimeSeconds / 60)).padStart(2, '0');
             const seconds = String(totalTimeSeconds % 60).padStart(2, '0');
             
@@ -878,7 +883,9 @@
 
         function showResults() {
             quizEndTime = Date.now();  // ✅ Make sure this is set
-            stopQuizTimer();
+            // Pause timer first to accumulate any remaining time
+            pauseQuizTimer();
+            
             document.getElementById('question').style.display = 'none';
             document.getElementById('answers').style.display = 'none';
             document.getElementById('submit-btn').style.display = 'none';
@@ -897,7 +904,8 @@
             document.getElementById('answer-changes-display').textContent = totalAnswerChanges;
             document.getElementById('answer-changes-box').textContent = totalAnswerChanges;
 
-            const totalTimeSeconds = Math.floor((quizEndTime - quizStartTime) / 1000);
+            // Calculate total time from accumulated elapsed time
+            const totalTimeSeconds = Math.floor(elapsedBeforePause / 1000);
             const minutes = String(Math.floor(totalTimeSeconds / 60)).padStart(2, '0');
             const seconds = String(totalTimeSeconds % 60).padStart(2, '0');
             document.getElementById('total-time-display').textContent = `${minutes}:${seconds}`;
@@ -921,6 +929,18 @@
             document.getElementById('fast-bar').textContent = fastCount;
             document.getElementById('avg-bar').textContent = avgCount;
             document.getElementById('slow-bar').textContent = slowCount;
+
+            // Store quiz data for feedback page
+            const feedbackData = {
+                totalTime: `${minutes}:${seconds}`,
+                answerChanges: totalAnswerChanges,
+                score: score,
+                totalQuestions: quizData.length,
+                fastCount: fastCount,
+                avgCount: avgCount,
+                slowCount: slowCount
+            };
+            localStorage.setItem('quizFeedbackData', JSON.stringify(feedbackData));
         }
 
         // Initialize quiz by loading data
