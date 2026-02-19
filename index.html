@@ -3,71 +3,196 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Diabete Confidence Quiz</title>
+    <title>Welcome to Diabetes Confidence Learning</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-start: #667eea;
+            --bg-end: #764ba2;
+            --card-bg: #ffffff;
+            --text-main: #1f2330;
+            --text-muted: #5a6272;
+            --accent: #4CAF50;
+            --shadow: 0 20px 50px rgba(30, 30, 60, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
             margin: 0;
-            display: grid;
-            place-items: center;
             min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: var(--text-main);
+            position: relative;
+            overflow-x: hidden;
         }
 
-        .menu {
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-            text-align: center;
-            width: min(480px, 90%);
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            filter: blur(4px);
+            z-index: 0;
         }
 
-        .menu h1 {
-            margin-bottom: 16px;
-            color: #333;
+        body::before {
+            top: -80px;
+            left: -60px;
         }
 
-        .menu p {
-            color: #666;
+        body::after {
+            bottom: -100px;
+            right: -80px;
+        }
+
+        .page {
+            width: min(960px, 94%);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 36px 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: left;
             margin-bottom: 24px;
         }
 
-        .menu a {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #2196F3;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
+        .brand-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(102, 126, 234, 0.15);
+            color: #4b52b8;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin: 0 0 10px 0;
+        }
+
+        .hero p {
+            margin: 0;
+            color: var(--text-muted);
             font-size: 16px;
-            margin: 8px;
-            transition: all 0.3s ease;
+            line-height: 1.6;
         }
 
-        .menu a:hover {
-            background: #1976D2;
-            transform: translateY(-2px);
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
         }
 
-        .button-group {
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 22px 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 10px 30px rgba(30, 30, 60, 0.18);
+            border: 1px solid rgba(102, 126, 234, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             gap: 10px;
+            min-height: 150px;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(30, 30, 60, 0.25);
+        }
+
+        .card-icon {
+            font-size: 28px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card-cta {
+            margin-top: auto;
+            font-weight: 600;
+            color: #4b52b8;
+        }
+
+        .footer-note {
             margin-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 28px 24px;
+            }
+
+            .menu-card {
+                min-height: 140px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="menu">
-        <h1>Welcome to Diabetes Confidence Learning</h1>
-        <p>Choose how you'd like to study:</p>
-        <div class="button-group">
-            <a href="question-bank.html">📝 Question Bank</a>
-            <a href="short_answer.html">📖 Short Answer Questions</a>
-            <a href="credits.html">ℹ️ Credits</a>
-        </div>
+    <div class="page">
+        <header class="hero">
+            <div class="brand-pill">Diabetes Confidence Learning</div>
+            <h1>Build confidence with focused practice.</h1>
+            <p>Choose a path below to strengthen your understanding and track your progress with clear, personalized feedback.</p>
+        </header>
+
+        <section class="menu">
+            <a class="menu-card" href="question-bank.html">
+                <div class="card-icon">📝</div>
+                <div class="card-title">Question Bank</div>
+                <div class="card-desc">Adaptive multiple-choice questions designed to build speed and accuracy.</div>
+                <div class="card-cta">Start practice →</div>
+            </a>
+            <a class="menu-card" href="short_answer.html">
+                <div class="card-icon">📖</div>
+                <div class="card-title">Short Answer Questions</div>
+                <div class="card-desc">Explain your reasoning in depth and strengthen conceptual understanding.</div>
+                <div class="card-cta">Begin writing →</div>
+            </a>
+            <a class="menu-card" href="credits.html">
+                <div class="card-icon">ℹ️</div>
+                <div class="card-title">Credits</div>
+                <div class="card-desc">Learn about the project, contributors, and learning resources.</div>
+                <div class="card-cta">View details →</div>
+            </a>
+        </section>
+
     </div>
 </body>
 </html>
