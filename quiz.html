@@ -354,13 +354,10 @@
         <div id="results" style="display: none;">
             <h2>Quiz Complete!</h2>
             <div class="score"><span id="score"></span>/<span id="total"></span></div>
-            <p>Final Confidence Level: <span id="final-confidence"></span></p>
-            <p>Total Answer Changes: <span id="answer-changes-display" style="font-weight: bold; color: #ff9800;">0</span></p>
-            <p>Total Time: <span id="total-time-display">00:00</span></p>
             
             <div class="results-stats">
                 <div class="stat-box">
-                    <h3>Final Confidence Level</h3>
+                    <h3>Final Momentum Level</h3>
                     <p class="stat-value"><span id="final-confidence-box"></span></p>
                 </div>
                 
@@ -419,6 +416,7 @@
         let currentQuestion = 0;
         let score = 0;
         let totalConfidence = 0;
+        let baseConfidence = 50;
         let responseTimes = [];
         let questionStartTime = Date.now();
         let selectedAnswerIndex = null;
@@ -560,6 +558,7 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const selectedTopic = urlParams.get('topic');
                 const userConfidence = parseInt(urlParams.get('confidence')) || 50;
+                baseConfidence = userConfidence;
 
                 if (!selectedTopic) {
                     throw new Error('No topic selected. Please choose a topic from the Question Bank.');
@@ -836,7 +835,7 @@
                         <p class="checkpoint-value">${score}/${currentQuestion}</p>
                     </div>
                     <div class="checkpoint-stat">
-                        <h3>Confidence Level</h3>
+                        <h3>Momentum Level</h3>
                         <p class="checkpoint-value">${Math.round(currentConfidence)}%</p>
                     </div>
                     <div class="checkpoint-stat">
@@ -974,7 +973,8 @@
                 totalQuestions: quizData.length,
                 fastCount: fastCount,
                 avgCount: avgCount,
-                slowCount: slowCount
+                slowCount: slowCount,
+                baseConfidence: baseConfidence
             };
             localStorage.setItem('quizFeedbackData', JSON.stringify(feedbackData));
         }

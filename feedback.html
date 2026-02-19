@@ -277,6 +277,10 @@
                 <div class="metric-value" id="score-display">0/0</div>
             </div>
         </div>
+        <div class="feedback-section">
+            <h3><span class="emoji">🎯</span> Confidence vs Score Feedback</h3>
+            <p id="confidence-alignment-feedback">Your confidence alignment feedback will appear here.</p>
+        </div>
 
         <div class="feedback-section">
             <h3><span class="emoji">⏱️</span> Time Management Feedback</h3>
@@ -286,6 +290,16 @@
         <div class="feedback-section">
             <h3><span class="emoji">🔄</span> Decision Confidence Feedback</h3>
             <p id="confidence-feedback">You made confident decisions with very few answer changes.</p>
+        </div>
+
+        <div class="feedback-section">
+            <h3><span class="emoji">💡</span> Test Taking Recommendation</h3>
+            <p id="recommendation">Keep up the great work and continue practicing!</p>
+        </div>
+
+        <div class="feedback-section">
+            <h3><span class="emoji">📚</span> Knowledge & Understanding Analysis</h3>
+            <p id="understanding-feedback">Your understanding of the material is developing.</p>
         </div>
 
         <div class="feedback-section">
@@ -307,21 +321,12 @@
             </div>
         </div>
 
-        <div class="feedback-section">
-            <h3><span class="emoji">💡</span> Personalized Recommendation</h3>
-            <p id="recommendation">Keep up the great work and continue practicing!</p>
-        </div>
-
-        <div class="feedback-section">
-            <h3><span class="emoji">📚</span> Knowledge & Understanding Analysis</h3>
-            <p id="understanding-feedback">Your understanding of the material is developing.</p>
-        </div>
-
         <div class="button-group">
             <a href="question-bank.html" class="btn btn-primary">📚 Take Another Quiz</a>
             <a href="index.html" class="btn btn-secondary">🏠 Back to Home</a>
         </div>
     </div>
+    
 
     <script>
         // Retrieve quiz data from localStorage
@@ -339,6 +344,12 @@
             const avgCount = quizData.avgCount || 0;
             const slowCount = quizData.slowCount || 0;
             const scorePercentage = Math.round((score / totalQuestions) * 100);
+            const baseConfidenceValue = Number.isFinite(quizData.baseConfidence)
+                ? quizData.baseConfidence
+                : parseFloat(quizData.baseConfidence);
+            const baseConfidence = Number.isFinite(baseConfidenceValue)
+                ? Math.max(0, Math.min(100, baseConfidenceValue))
+                : 50;
 
             // Update metric displays
             document.getElementById('total-time').textContent = totalTime;
@@ -349,7 +360,7 @@
             document.getElementById('slow-display').textContent = slowCount;
 
             // Generate feedback based on metrics
-            const feedbacks = generateFeedback(totalTime, answerChanges, fastCount, avgCount, slowCount, scorePercentage, score, totalQuestions);
+            const feedbacks = generateFeedback(totalTime, answerChanges, fastCount, avgCount, slowCount, scorePercentage, score, totalQuestions, baseConfidence);
 
             // Update feedback sections
             document.getElementById('time-feedback').textContent = feedbacks.timeFeedback;
@@ -357,13 +368,14 @@
             document.getElementById('pace-feedback').textContent = feedbacks.paceFeedback;
             document.getElementById('recommendation').textContent = feedbacks.recommendation;
             document.getElementById('understanding-feedback').textContent = feedbacks.understandingFeedback;
+            document.getElementById('confidence-alignment-feedback').textContent = feedbacks.confidenceAlignmentFeedback;
             
             // Update overall rating
             document.getElementById('overall-rating').textContent = feedbacks.overallRating;
             document.getElementById('rating-stars').textContent = feedbacks.stars;
         }
 
-        function generateFeedback(totalTime, answerChanges, fastCount, avgCount, slowCount, scorePercentage, score, totalQuestions) {
+        function generateFeedback(totalTime, answerChanges, fastCount, avgCount, slowCount, scorePercentage, score, totalQuestions, baseConfidence) {
             const timeMatch = totalTime.match(/(\d+):(\d+)/);
             const timeInSeconds = (parseInt(timeMatch[1]) * 60) + parseInt(timeMatch[2]);
             const avgTimePerQuestion = totalQuestions > 0 ? timeInSeconds / totalQuestions : 0;
@@ -419,13 +431,13 @@
 
             // PERSONALIZED RECOMMENDATION based on Time and Swap categories
             if (isHighTime && isHighSwaps) {
-                feedback.recommendation = `You spent a considerable amount of time on the questions. Continuing to develop efficient strategies for discriminating between similar answer choices may help improve pacing and decision confidence.`;
+                feedback.recommendation = `You spent a considerable amount of time on the questions. Continuing to develop efficient strategies for discriminating between similar answer choices may help improve pacing and decision making.`;
             } else if (isLowTime && isHighSwaps) {
                 feedback.recommendation = `You completed the questions quickly but changed answers often. Focusing on careful discrimination between similar options before selecting an answer may help balance speed with consistency.`;
             } else if (isHighTime && isLowSwaps) {
                 feedback.recommendation = `You show strong focus and commitment to your answers. Consider working on pacing to improve efficiency.`;
             } else if (isLowTime && isLowSwaps) {
-                feedback.recommendation = `Excellent efficiency and confidence. Your decision-making appears clear and consistent.`;
+                feedback.recommendation = `Excellent efficiency. Your decision-making appears clear and consistent.`;
             } else {
                 // Default/middle ground
                 feedback.recommendation = `Keep up the great work and continue practicing!`;
@@ -433,13 +445,27 @@
 
             // UNDERSTANDING/KNOWLEDGE ANALYSIS based on score percentage
             if (scorePercentage <= 25) {
-                feedback.understandingFeedback = `Please reread your notes and articles to improve your understanding, while also writing additional notes to improve your understanding of the concepts.`;
+                feedback.understandingFeedback = 'Please reread your notes and articles to improve your understanding, while also writing additional notes to improve your understanding of the concepts.';
             } else if (scorePercentage <= 50) {
-                feedback.understandingFeedback = `You have some key concepts written in your notes but you struggled with remembering the topics on the quiz.`;
+                feedback.understandingFeedback = 'You have some key concepts written in your notes but you struggled with remembering the topics on the quiz.';
             } else if (scorePercentage <= 75) {
-                feedback.understandingFeedback = `You remember most key concepts from the article and your notes but you may have struggled with remembering more unique concepts.`;
+                feedback.understandingFeedback = 'You remember most key concepts from the article and your notes but you may have struggled with remembering more unique concepts.';
             } else {
-                feedback.understandingFeedback = `You have an excellent understanding of key and unique topics. Keep on with using your notes for summary of key concepts.`;
+                feedback.understandingFeedback = 'You have an excellent understanding of key and unique topics. Keep on with using your notes for summary of key concepts.';
+            }
+
+            // CONFIDENCE VS SCORE FEEDBACK
+            const confidenceDelta = baseConfidence - scorePercentage;
+            const absConfidenceDelta = Math.abs(confidenceDelta);
+
+            if (absConfidenceDelta <= 20 && scorePercentage >= 75) {
+                feedback.confidenceAlignmentFeedback = 'Excellent work. You answered correctly and your confidence matched your understanding. This shows strong mastery and accurate self-assessment. Keep approaching questions with this level of clarity and conviction.';
+            } else if (confidenceDelta < -20) {
+                feedback.confidenceAlignmentFeedback = 'You answered correctly, but you weren\'t fully confident. This suggests you understand the material better than you think. Try to trust your reasoning process — your instincts are stronger than you\'re giving yourself credit for.';
+            } else if (confidenceDelta > 20) {
+                feedback.confidenceAlignmentFeedback = 'Your answer was incorrect, but you felt confident. This may indicate a misunderstanding or an assumption that needs revisiting. Take a moment to review this concept carefully and reflect on where your reasoning diverged from the correct logic.';
+            } else {
+                feedback.confidenceAlignmentFeedback = 'Your answer was incorrect, and you weren\'t fully confident — which shows healthy awareness of uncertainty. This is a great opportunity to strengthen your understanding. Review the concept and aim to turn uncertainty into clarity.';
             }
 
             // OVERALL RATING
