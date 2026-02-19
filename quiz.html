@@ -933,17 +933,14 @@
             document.getElementById('total').textContent = quizData.length;
             
             const finalConfidence = Math.max(0, Math.min(100, 50 + totalConfidence * 5));
-            document.getElementById('final-confidence').textContent = Math.round(finalConfidence) + '%';
             document.getElementById('final-confidence-box').textContent = Math.round(finalConfidence) + '%';
 
-            document.getElementById('answer-changes-display').textContent = totalAnswerChanges;
             document.getElementById('answer-changes-box').textContent = totalAnswerChanges;
 
             // Calculate total time from accumulated elapsed time
             const totalTimeSeconds = Math.floor(elapsedBeforePause / 1000);
             const minutes = String(Math.floor(totalTimeSeconds / 60)).padStart(2, '0');
             const seconds = String(totalTimeSeconds % 60).padStart(2, '0');
-            document.getElementById('total-time-display').textContent = `${minutes}:${seconds}`;
             document.getElementById('total-time-box').textContent = `${minutes}:${seconds}`;
 
             console.log('Final Counters - Fast:', fastCount, 'Avg:', avgCount, 'Slow:', slowCount);
