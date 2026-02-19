@@ -278,7 +278,7 @@
             </div>
         </div>
         <div class="feedback-section">
-            <h3><span class="emoji">🎯</span> Confidence vs Score Feedback</h3>
+            <h3><span class="emoji">🎯</span> Metacognitive Feedback</h3>
             <p id="confidence-alignment-feedback">Your confidence alignment feedback will appear here.</p>
         </div>
 
@@ -461,11 +461,11 @@
             if (absConfidenceDelta <= 20 && scorePercentage >= 75) {
                 feedback.confidenceAlignmentFeedback = 'Excellent work. You answered correctly and your confidence matched your understanding. This shows strong mastery and accurate self-assessment. Keep approaching questions with this level of clarity and conviction.';
             } else if (confidenceDelta < -20) {
-                feedback.confidenceAlignmentFeedback = 'You answered correctly, but you weren\'t fully confident. This suggests you understand the material better than you think. Try to trust your reasoning process — your instincts are stronger than you\'re giving yourself credit for.';
+                feedback.confidenceAlignmentFeedback = 'Interpretation: Underconfident. You answered correctly, but you weren\'t fully confident. This suggests you understand the material better than you think. Try to trust your reasoning process — your instincts are stronger than you\'re giving yourself credit for.';
             } else if (confidenceDelta > 20) {
-                feedback.confidenceAlignmentFeedback = 'Your answer was incorrect, but you felt confident. This may indicate a misunderstanding or an assumption that needs revisiting. Take a moment to review this concept carefully and reflect on where your reasoning diverged from the correct logic.';
+                feedback.confidenceAlignmentFeedback = 'Interpretation: Overconfident. Your answer was incorrect, but you felt confident. This may indicate a misunderstanding or an assumption that needs revisiting. Take a moment to review this concept carefully and reflect on where your reasoning diverged from the correct logic.';
             } else {
-                feedback.confidenceAlignmentFeedback = 'Your answer was incorrect, and you weren\'t fully confident — which shows healthy awareness of uncertainty. This is a great opportunity to strengthen your understanding. Review the concept and aim to turn uncertainty into clarity.';
+                feedback.confidenceAlignmentFeedback = 'Interpretation: Calibrating. Your answer was incorrect, and you weren\'t fully confident — which shows healthy awareness of uncertainty. This is a great opportunity to strengthen your understanding. Review the concept and aim to turn uncertainty into clarity.';
             }
 
             // OVERALL RATING

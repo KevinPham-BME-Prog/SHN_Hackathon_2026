@@ -111,6 +111,38 @@
             transition: width 0.3s ease;
         }
 
+        .confidence-input {
+            margin: 20px 0 25px;
+            padding: 18px 20px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            border: 1px solid #e6e6e6;
+            text-align: center;
+        }
+
+        .confidence-input label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        #confidence-slider {
+            width: 80%;
+            max-width: 420px;
+            height: 8px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        #confidence-display {
+            display: inline-block;
+            margin-left: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
         .topic-title {
             color: #667eea;
             font-size: 14px;
@@ -521,6 +553,11 @@
     <div id="topic-selector">
         <h2>📖 Short Answer Questions</h2>
         <p style="color: #666; margin-bottom: 20px;">Select a topic to begin answering short answer questions</p>
+        <div class="confidence-input">
+            <label for="confidence-slider">Set Your Confidence Level:</label>
+            <input type="range" id="confidence-slider" min="0" max="100" value="0">
+            <span id="confidence-display">0%</span>
+        </div>
         <div class="topic-buttons" id="topic-list"></div>
     </div>
 
@@ -660,11 +697,16 @@
         function finishTopic() {
             // Show feedback page if they answered questions
             if (questionsAnswered > 0) {
+                const confidenceValue = parseFloat(confidenceSlider ? confidenceSlider.value : '0');
+                const baseConfidence = Number.isFinite(confidenceValue)
+                    ? Math.max(0, Math.min(100, confidenceValue))
+                    : 0;
                 const feedbackData = {
                     score: totalScore,
                     totalAnswered: questionsAnswered,
                     topicName: currentTopic,
-                    percentage: ((totalScore / questionsAnswered) * 100).toFixed(1)
+                    percentage: ((totalScore / questionsAnswered) * 100).toFixed(1),
+                    baseConfidence: baseConfidence
                 };
                 localStorage.setItem('shortAnswerFeedbackData', JSON.stringify(feedbackData));
                 window.location.href = 'short_answer_feedback.html';
@@ -812,11 +854,16 @@
         function finishTopic() {
             // Redirect to feedback page with score data
             if (questionsAnswered > 0) {
+                const confidenceValue = parseFloat(confidenceSlider ? confidenceSlider.value : '0');
+                const baseConfidence = Number.isFinite(confidenceValue)
+                    ? Math.max(0, Math.min(100, confidenceValue))
+                    : 0;
                 const feedbackData = {
                     score: totalScore,
                     totalAnswered: questionsAnswered,
                     topicName: currentTopic,
-                    percentage: ((totalScore / questionsAnswered) * 100).toFixed(1)
+                    percentage: ((totalScore / questionsAnswered) * 100).toFixed(1),
+                    baseConfidence: baseConfidence
                 };
                 localStorage.setItem('shortAnswerFeedbackData', JSON.stringify(feedbackData));
                 window.location.href = 'short_answer_feedback.html';
@@ -854,6 +901,17 @@
                 }
             }
         });
+
+        const confidenceSlider = document.getElementById('confidence-slider');
+        const confidenceDisplay = document.getElementById('confidence-display');
+
+        if (confidenceSlider && confidenceDisplay) {
+            confidenceSlider.value = 0;
+            confidenceDisplay.textContent = '0%';
+            confidenceSlider.addEventListener('input', (event) => {
+                confidenceDisplay.textContent = `${event.target.value}%`;
+            });
+        }
 
         // Initialize
         loadQuestions();

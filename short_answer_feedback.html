@@ -221,6 +221,11 @@
         </div>
 
         <div class="feedback-section">
+            <h2><span class="emoji">🎯</span> Metacognitive Feedback</h2>
+            <p class="feedback-text" id="confidence-alignment-feedback">Your confidence alignment feedback will appear here.</p>
+        </div>
+
+        <div class="feedback-section">
             <h2><span class="emoji">💡</span> Next Steps</h2>
             <p class="feedback-text" id="next-steps-feedback">Continue practicing to strengthen your knowledge.</p>
             <div class="tip-box" id="tip-box"></div>
@@ -243,6 +248,12 @@
             const totalAnswered = feedbackData.totalAnswered;
             const topicName = feedbackData.topicName;
             const percentage = totalAnswered > 0 ? ((score / totalAnswered) * 100) : 0;
+            const baseConfidenceValue = Number.isFinite(feedbackData.baseConfidence)
+                ? feedbackData.baseConfidence
+                : parseFloat(feedbackData.baseConfidence);
+            const baseConfidence = Number.isFinite(baseConfidenceValue)
+                ? Math.max(0, Math.min(100, baseConfidenceValue))
+                : 0;
 
             // Update score display
             document.getElementById('topic-name').textContent = `Topic: ${topicName}`;
@@ -250,17 +261,18 @@
             document.getElementById('percentage-display').textContent = `${percentage.toFixed(1)}%`;
 
             // Generate feedback based on percentage
-            let feedback = generateFeedback(percentage);
+            let feedback = generateFeedback(percentage, baseConfidence);
 
             // Update all feedback sections
             document.getElementById('rating-text').textContent = feedback.rating;
             document.getElementById('rating-stars').textContent = feedback.stars;
             document.getElementById('understanding-feedback').textContent = feedback.understanding;
+            document.getElementById('confidence-alignment-feedback').textContent = feedback.confidenceAlignmentFeedback;
             document.getElementById('next-steps-feedback').textContent = feedback.nextSteps;
             document.getElementById('tip-box').innerHTML = feedback.tip;
         }
 
-        function generateFeedback(percentage) {
+        function generateFeedback(percentage, baseConfidence) {
             let feedback = {};
 
             if (percentage < 25) {
@@ -287,6 +299,19 @@
                 feedback.understanding = 'You have an excellent understanding of key and unique topics. Your deep comprehension is evident in your responses.';
                 feedback.nextSteps = 'Keep up with using your notes for summary of key concepts. Consider helping peers or tackling more advanced material.';
                 feedback.tip = '<strong>📚 Tip:</strong> You\'ve mastered this topic! Challenge yourself with application-based problems or explore related advanced topics to deepen your expertise.';
+            }
+
+            const confidenceDelta = baseConfidence - percentage;
+            const absConfidenceDelta = Math.abs(confidenceDelta);
+
+            if (absConfidenceDelta <= 20 && percentage >= 75) {
+                feedback.confidenceAlignmentFeedback = 'Excellent work. You answered correctly and your confidence matched your understanding. This shows strong mastery and accurate self-assessment. Keep approaching questions with this level of clarity and conviction.';
+            } else if (confidenceDelta < -20) {
+                feedback.confidenceAlignmentFeedback = 'Interpretation: Underconfident. You answered correctly, but you weren\'t fully confident. This suggests you understand the material better than you think. Try to trust your reasoning process — your instincts are stronger than you\'re giving yourself credit for.';
+            } else if (confidenceDelta > 20) {
+                feedback.confidenceAlignmentFeedback = 'Interpretation: Overconfident. Your answer was incorrect, but you felt confident. This may indicate a misunderstanding or an assumption that needs revisiting. Take a moment to review this concept carefully and reflect on where your reasoning diverged from the correct logic.';
+            } else {
+                feedback.confidenceAlignmentFeedback = 'Interpretation: Calibrating. Your answer was incorrect, and you weren\'t fully confident — which shows healthy awareness of uncertainty. This is a great opportunity to strengthen your understanding. Review the concept and aim to turn uncertainty into clarity.';
             }
 
             return feedback;
