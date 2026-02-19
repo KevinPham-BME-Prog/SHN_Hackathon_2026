@@ -1,0 +1,2622 @@
+{
+  "Metformin First-Line Therapy": [
+    {
+      "id": "T1-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "For most adults with type 2 diabetes who require pharmacotherapy, which agent is recommended as the initial medication?",
+      "options": [
+        "Sulfonylurea",
+        "Metformin",
+        "DPP-4 inhibitor",
+        "SGLT2 inhibitor"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T1-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "What is the usual starting dose strategy for metformin to minimize gastrointestinal side effects?",
+      "options": [
+        "250–500 mg twice daily with meals, then titrate",
+        "Start 1,000 mg twice daily immediately",
+        "Once-daily 2,000 mg with breakfast",
+        "500 mg at bedtime only, no titration"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T1-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "What is the typical target daily dose for metformin beyond which minimal additional glycemic improvement occurs?",
+      "options": [
+        "2,000 mg/day",
+        "3,000 mg/day",
+        "1,000 mg/day",
+        "1,500 mg/day"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T1-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "According to the guideline, metformin should NOT be used in which situation?",
+      "options": [
+        "Body-mass index > 35 kg/m^2",
+        "Estimated GFR < 15 mL/min/1.73 m^2",
+        "Age > 75 years",
+        "Mild hepatic steatosis only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T1-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Compared with sulfonylureas, metformin monotherapy is associated with which profile?",
+      "options": [
+        "Less A1C lowering, more hypoglycemia, weight gain",
+        "Greater A1C lowering, higher hypoglycemia risk",
+        "Similar A1C lowering, better durability, negligible hypoglycemia, no weight gain",
+        "Similar A1C lowering, more weight gain"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T1-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Versus DPP-4 inhibitors, metformin generally provides:",
+      "options": [
+        "Similar A1C lowering and more weight gain",
+        "Less A1C lowering but better tolerability",
+        "Better A1C lowering and more weight loss",
+        "Greater hypoglycemia risk"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T1-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Typical A1C reduction expected with non‑insulin monotherapy (varies by baseline A1C and agent) is approximately:",
+      "options": [
+        ">2.5%",
+        "0.1% to 0.3%",
+        "0.5% to 1.5%",
+        "Exactly 1.0%"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T1-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Over what time frame does the maximal effect of a non‑insulin antihyperglycemic monotherapy generally occur?",
+      "options": [
+        "3–6 months",
+        "1–2 weeks",
+        "12 months",
+        ">18 months"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T1-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 64‑year‑old with type 2 diabetes and eGFR 22 mL/min/1.73 m^2 is newly diagnosed. Which statement best reflects metformin use?",
+      "options": [
+        "Metformin can be used with caution because the absolute contraindication is only eGFR < 15",
+        "Metformin is absolutely contraindicated because eGFR < 30",
+        "Metformin is preferred over insulin in symptomatic hyperglycemia",
+        "Metformin must be started at the maximal dose immediately"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T1-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which UKPDS finding supported metformin in newly diagnosed adults with overweight?",
+      "options": [
+        "No difference in clinical outcomes",
+        "Increased hypoglycemia vs sulfonylureas",
+        "Greater weight gain than insulin",
+        "Reduced cardiovascular and all‑cause mortality"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T1-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "When uptitrating metformin, which approach is recommended to reduce GI adverse effects?",
+      "options": [
+        "Split dose into fasting-only dosing",
+        "Add a sulfonylurea immediately",
+        "Slow dose increase over several weeks with meals",
+        "Avoid taking with food"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T1-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which of the following is a recognized absolute contraindication to metformin use per this guideline?",
+      "options": [
+        "History of lactic acidosis",
+        "BMI > 40 kg/m^2",
+        "A1C > 10%",
+        "Diabetic neuropathy"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T1-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 55‑year‑old with newly diagnosed type 2 diabetes (A1C 7.9%), no comorbidities, asks about first‑line therapy. What is the most appropriate initial pharmacologic agent?",
+      "options": [
+        "DPP‑4 inhibitor",
+        "Metformin",
+        "Basal insulin",
+        "Thiazolidinedione"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T1-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 48‑year‑old started metformin 500 mg BID last week develops mild diarrhea. What is the best next step?",
+      "options": [
+        "Stop metformin permanently",
+        "Switch immediately to insulin",
+        "Add a meglitinide",
+        "Continue and up‑titrate slowly over weeks"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T1-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 60‑year‑old with A1C 7.6% on lifestyle alone seeks medication that avoids hypoglycemia and weight gain. Which is most appropriate?",
+      "options": [
+        "Sulfonylurea",
+        "Insulin NPH",
+        "Metformin",
+        "Meglitinide"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T1-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 58‑year‑old with eGFR 58 mL/min/1.73 m^2 and no liver disease starts metformin. Which counseling point is most accurate?",
+      "options": [
+        "Take with meals and titrate gradually",
+        "Avoid all carbohydrates",
+        "Stop if A1C < 7% after 2 weeks",
+        "Increase to >3,000 mg/day for maximal effect"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T1-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 66‑year‑old with compensated cirrhosis (severe hepatic dysfunction is not documented), eGFR 40, and new A1C 7.8% asks about metformin. Which statement best aligns with the guideline?",
+      "options": [
+        "Metformin is absolutely contraindicated at eGFR 40",
+        "Metformin can be used unless severe hepatic dysfunction or lactic acidosis history exists",
+        "Insulin must be used as first‑line regardless of symptoms",
+        "Metformin inevitably causes hypoglycemia"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T1-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 72‑year‑old with eGFR 12 mL/min/1.73 m^2 and prior lactic acidosis presents for diabetes management. Which is the best approach regarding metformin?",
+      "options": [
+        "Start low‑dose metformin with close monitoring",
+        "Avoid metformin due to contraindications",
+        "Switch to metformin ER only",
+        "Use metformin monotherapy at 2,000 mg/day"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T1-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 52‑year‑old with new T2D prefers a once‑daily regimen and asks if he can take 2,000 mg metformin all at breakfast from day 1. Best response?",
+      "options": [
+        "Start 250–500 mg BID with meals and titrate to ~2,000 mg/day",
+        "Start 2,000 mg once daily to achieve faster control",
+        "Use 1,000 mg BID without meals",
+        "Avoid metformin until A1C > 9%"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T1-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 59‑year‑old with BMI 31 kg/m^2 and A1C 7.5% asks which therapy has shown mortality benefit in newly diagnosed overweight adults. Best answer?",
+      "options": [
+        "Metformin (UKPDS 34)",
+        "Acarbose",
+        "Insulin lispro",
+        "Meglitinide"
+      ],
+      "answer": "A"
+    }
+  ],
+  "Immediate Insulin Initiation": [
+    {
+      "id": "T2-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Insulin should be initiated immediately at diagnosis in which circumstance?",
+      "options": [
+        "Any A1C > 7% without symptoms",
+        "Metabolic decompensation or severe symptomatic hyperglycemia",
+        "Any patient age > 65 years",
+        "Presence of microalbuminuria alone"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T2-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which of the following are classic symptoms of severe hyperglycemia that support immediate insulin initiation?",
+      "options": [
+        "Nausea, vomiting, abdominal pain only",
+        "Polyuria, polydipsia, visual blurring",
+        "Night sweats and tremor",
+        "Bradycardia and hypotension"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T2-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "In metabolic decompensation due to hyperglycemia, insulin is recommended with or without which agent?",
+      "options": [
+        "Sulfonylurea",
+        "DPP‑4 inhibitor",
+        "Metformin",
+        "Meglitinide"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T2-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Once a patient stabilized from metabolic decompensation, what may be possible regarding insulin?",
+      "options": [
+        "Continue lifelong basal‑bolus regardless",
+        "Stop all non‑insulin agents",
+        "Taper or discontinue insulin and replace with other agents as required",
+        "Switch to sulfonylurea only"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T2-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which of the following supports initiating insulin even if A1C is unknown?",
+      "options": [
+        "Hyperosmolar state or ketosis",
+        "Mild dyslipidemia",
+        "Hypertension alone",
+        "Peripheral neuropathy"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T2-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "A1C threshold for considering combination therapy at diagnosis (even without metabolic decompensation) is:",
+      "options": [
+        "> 0.5% above target",
+        "> 1.5% above individualized target",
+        "> 3% above target",
+        "Exactly 8.0%"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T2-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "In severe symptomatic hyperglycemia, which initial pharmacologic approach is recommended?",
+      "options": [
+        "Start a DPP‑4 inhibitor only",
+        "Delay therapy and recheck A1C in 3 months",
+        "Start a thiazolidinedione only",
+        "Start insulin promptly (± metformin)"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T2-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which feature suggests unintentional weight loss related to hyperglycemia and supports immediate insulin?",
+      "options": [
+        "Stable weight for 1 year",
+        "Weight gain after diet change",
+        "Catabolic weight loss over weeks to months",
+        "Fluid retention"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T2-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 45‑year‑old presents with polyuria, polydipsia, and blurry vision. Random glucose 28 mmol/L with ketonuria. Best initial step?",
+      "options": [
+        "Start metformin alone",
+        "Begin GLP‑1 RA monotherapy",
+        "Initiate insulin therapy (± metformin)",
+        "Delay treatment pending A1C"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T2-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old with new T2D, A1C 11.8%, 7‑kg unintentional weight loss, and serum osmolality high. Best initial pharmacotherapy?",
+      "options": [
+        "Metformin only",
+        "SGLT2 inhibitor only",
+        "Sulfonylurea",
+        "Insulin"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T2-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 63‑year‑old with symptomatic hyperglycemia starts insulin. After stabilization, A1C falls to target on metformin + GLP‑1 RA. What can be done with insulin?",
+      "options": [
+        "Continue full basal‑bolus indefinitely",
+        "Switch to TZD monotherapy",
+        "Taper or discontinue if appropriate",
+        "Stop all non‑insulin agents"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T2-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which of the following *alone* does NOT constitute an indication for immediate insulin per the guideline?",
+      "options": [
+        "Hyperosmolar state",
+        "Ketonuria",
+        "Microalbuminuria without symptoms",
+        "Severe symptomatic hyperglycemia"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T2-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 50‑year‑old with fasting glucose 17 mmol/L, polyuria, polydipsia, and 5‑kg weight loss is diagnosed with T2D. Best initial pharmacotherapy?",
+      "options": [
+        "Metformin only",
+        "Insulin (± metformin)",
+        "DPP‑4 inhibitor",
+        "Thiazolidinedione"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T2-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 61‑year‑old presents with blurry vision and random glucose 27 mmol/L with positive serum ketones. What is the most appropriate immediate management?",
+      "options": [
+        "Start SGLT2 inhibitor",
+        "Start acarbose",
+        "Reassure and repeat labs in 1 month",
+        "Start insulin therapy"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T2-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 54‑year‑old has A1C 9.2% without symptoms or catabolism. Which initial approach is preferred?",
+      "options": [
+        "Immediate insulin",
+        "No pharmacotherapy; lifestyle only",
+        "Combination non‑insulin therapy at diagnosis",
+        "DPP‑4 inhibitor monotherapy"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T2-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 67‑year‑old with severe symptomatic hyperglycemia begins insulin. Two months later, symptoms resolve and A1C 7.3% on metformin + SGLT2 inhibitor. Next step?",
+      "options": [
+        "Consider tapering insulin",
+        "Stop all non‑insulin agents",
+        "Increase insulin dose empirically",
+        "Add sulfonylurea"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T2-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 43‑year‑old with random glucose 30 mmol/L, elevated serum osmolality, and confusion is diagnosed with T2D. Best initial pharmacologic choice?",
+      "options": [
+        "Insulin",
+        "Metformin",
+        "GLP‑1 RA",
+        "Sulfonylurea"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T2-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 59‑year‑old with BMI 29 kg/m^2, polyuria, and A1C 10.8% starts insulin. After stabilization, which statement best reflects guideline‑concordant care?",
+      "options": [
+        "Insulin must be lifelong regardless of response",
+        "Other antihyperglycemic agents may replace insulin if targets are maintained",
+        "Secretagogues should always be added",
+        "DPP‑4 inhibitors are contraindicated after insulin"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T2-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 72‑year‑old with A1C 8.2% reports mild fatigue but no polyuria/polydipsia, no ketones, and stable weight. Which initial strategy is most appropriate?",
+      "options": [
+        "Immediate insulin due to age",
+        "Non‑insulin therapy; insulin not mandatory",
+        "No therapy is needed",
+        "Insulin plus full bolus immediately"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T2-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old with severe symptomatic hyperglycemia asks if metformin alone is sufficient initially. Best response?",
+      "options": [
+        "Metformin alone is sufficient",
+        "Any oral agent is fine",
+        "Start GLP‑1 RA alone",
+        "Insulin should be initiated promptly; metformin may be added"
+      ],
+      "answer": "D"
+    }
+  ],
+  "Combination Therapy at Diagnosis": [
+    {
+      "id": "T3-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "At diagnosis, combination therapy should be considered when A1C is:",
+      "options": [
+        "> 1.5% above individualized target",
+        "> 0.5% above target",
+        "> 3% above target",
+        "Exactly 8.0%"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T3-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Combining two oral agents at submaximal doses versus pushing one to the maximum tends to result in:",
+      "options": [
+        "More hypoglycemia",
+        "Worse adherence",
+        "Fewer side effects",
+        "No difference"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T3-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Compared with metformin alone, initial combination therapy lowers average A1C by approximately:",
+      "options": [
+        "Exactly 2.5% more",
+        "0.4% to 1.0% more",
+        "No additional reduction",
+        ">1.5% more"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Initial combination therapy increases the likelihood of achieving A1C < 7% at 6 months by roughly:",
+      "options": [
+        "10%",
+        "40%",
+        "75%",
+        "5%"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "When selecting the second agent to add to metformin, choices should be based primarily on:",
+      "options": [
+        "Individual priorities, preferences, and comorbidities",
+        "Cost alone",
+        "Provider preference only",
+        "Random selection to avoid bias"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T3-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which factor most affects the A1C‑lowering efficacy of SGLT2 inhibitors?",
+      "options": [
+        "Patient age",
+        "eGFR level (declines with lower eGFR)",
+        "Sex",
+        "Time of day administered"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Non‑insulin monotherapy typically achieves maximal glycemic effect within:",
+      "options": [
+        "1–2 weeks",
+        "3–6 months",
+        "12 months",
+        ">18 months"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which combination is generally NOT recommended due to similar mechanisms?",
+      "options": [
+        "Sulfonylurea + meglitinide",
+        "Metformin + SGLT2 inhibitor",
+        "Metformin + GLP‑1 RA",
+        "Metformin + DPP‑4 inhibitor"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T3-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A patient with A1C 9.0% at diagnosis (target 7.0%) asks about speed of control. Which strategy aligns with the guideline?",
+      "options": [
+        "Start metformin alone and reassess in 12 months",
+        "Start insulin immediately in all such cases",
+        "Start dual therapy to achieve faster and greater A1C reduction",
+        "Delay therapy 3 months"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T3-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 62‑year‑old with A1C 8.8% and eGFR 48 mL/min/1.73 m^2 wants weight loss. Which add‑on to metformin is most consistent with those goals?",
+      "options": [
+        "GLP‑1 RA",
+        "Sulfonylurea",
+        "Thiazolidinedione",
+        "Meglitinide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T3-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 70‑year‑old with A1C 8.7% (target 7%), asymptomatic, prefers to minimize hypoglycemia. Which add‑on class is preferable?",
+      "options": [
+        "Sulfonylurea",
+        "Insulin",
+        "SGLT2 inhibitor",
+        "Meglitinide"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T3-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old with A1C 8.6% (target 7%) has limited insurance coverage. Which lower‑cost option may be considered?",
+      "options": [
+        "GLP‑1 RA",
+        "Sulfonylurea",
+        "SGLT2 inhibitor",
+        "DPP‑4 inhibitor"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 55‑year‑old newly diagnosed with A1C 9.1% (target 7%), eGFR 85, no comorbidities. What is the preferred initial pharmacotherapy?",
+      "options": [
+        "Metformin alone",
+        "Metformin + a second agent",
+        "Insulin only",
+        "No pharmacotherapy"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 63‑year‑old with A1C 8.9% and desire for weight loss asks which combo with metformin is likely to help weight. Best answer?",
+      "options": [
+        "GLP‑1 RA or SGLT2 inhibitor",
+        "Sulfonylurea or insulin",
+        "Thiazolidinedione",
+        "Meglitinide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T3-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 49‑year‑old with A1C 9.2% (target 7%) prefers to avoid hypoglycemia. Which add‑on class is most consistent?",
+      "options": [
+        "SGLT2 inhibitor",
+        "Sulfonylurea",
+        "Insulin",
+        "Meglitinide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T3-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 61‑year‑old with eGFR 38 mL/min/1.73 m^2 is considering an SGLT2 inhibitor as add‑on to metformin. Which statement is true?",
+      "options": [
+        "Efficacy is independent of eGFR",
+        "Glycemic efficacy declines as eGFR decreases",
+        "Contraindicated at any eGFR",
+        "Causes immediate hypoglycemia"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 70‑year‑old with A1C 9.0% and limited budget asks for an affordable add‑on to metformin. Which is most cost‑effective?",
+      "options": [
+        "GLP‑1 RA",
+        "Sulfonylurea",
+        "SGLT2 inhibitor",
+        "DPP‑4 inhibitor"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T3-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 52‑year‑old with A1C 8.8% (target 7%) and symptomatic hypotension wants to avoid agents with diuretic effect. Which add‑on is preferable?",
+      "options": [
+        "SGLT2 inhibitor",
+        "High‑dose metformin immediately",
+        "Insulin",
+        "GLP‑1 RA"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T3-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old with A1C 8.7% has frequent late meals and asks about hypoglycemia risk with add‑on. Which class has negligible hypoglycemia risk as monotherapy?",
+      "options": [
+        "Sulfonylurea",
+        "Insulin",
+        "Meglitinide",
+        "GLP‑1 RA"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T3-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 60‑year‑old with A1C 9.1% and BMI 29 kg/m^2 asks whether triple oral therapy up front is required. Guideline‑concordant answer?",
+      "options": [
+        "Triple therapy is required at diagnosis",
+        "Start dual therapy; more agents can be added stepwise if needed",
+        "Insulin must be started immediately",
+        "Delay therapy 6 months"
+      ],
+      "answer": "B"
+    }
+  ],
+  "SGLT2i and GLP-1 RA Cardiorenal Protection": [
+    {
+      "id": "T4-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "For people with type 2 diabetes at high cardiovascular risk, which GLP‑1 RAs have demonstrated MACE reduction?",
+      "options": [
+        "Dulaglutide, liraglutide, subcutaneous semaglutide",
+        "Lixisenatide, oral semaglutide",
+        "Exenatide once‑weekly only",
+        "Albiglutide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T4-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which SGLT2 inhibitors demonstrated MACE reduction in high CV risk populations?",
+      "options": [
+        "Empagliflozin and canagliflozin",
+        "Dapagliflozin and ertugliflozin",
+        "All SGLT2 inhibitors equally",
+        "None"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T4-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "For individuals with heart failure (reduced or preserved EF), which SGLT2 inhibitors have proven benefit?",
+      "options": [
+        "Canagliflozin and ertugliflozin",
+        "Dapagliflozin and empagliflozin",
+        "Only dapagliflozin",
+        "None"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T4-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "For chronic kidney disease, which SGLT2 inhibitors have demonstrated renal outcome benefit?",
+      "options": [
+        "Ertugliflozin only",
+        "Canagliflozin, dapagliflozin, empagliflozin",
+        "Empagliflozin only",
+        "No SGLT2 inhibitor"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T4-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "When should SGLT2 inhibitors or GLP‑1 RAs for cardiorenal protection be started in eligible individuals?",
+      "options": [
+        "Only after 3 oral agents fail",
+        "At diagnosis when comorbidities are present, even if A1C is at target",
+        "Only if A1C > 9%",
+        "Only after insulin"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T4-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which of the following GLP‑1 RA agents lacks clear evidence for cardiorenal outcome benefits in CVOTs?",
+      "options": [
+        "Lixisenatide",
+        "Liraglutide",
+        "Dulaglutide",
+        "Subcutaneous semaglutide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T4-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Beyond MACE, SGLT2 inhibitors consistently reduce which outcomes across trials in high CV risk populations?",
+      "options": [
+        "Diabetic retinopathy progression only",
+        "Amputation risk across all agents",
+        "Heart failure events and renal outcomes",
+        "Hypoglycemia"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T4-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "In trials of SGLT2 inhibitors for heart failure, what proportion roughly did NOT have diabetes?",
+      "options": [
+        "None",
+        "About half",
+        "All participants had diabetes",
+        "<5%"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T4-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 62‑year‑old with T2D and established ASCVD asks which GLP‑1 RA reduces MACE. Best choice?",
+      "options": [
+        "Lixisenatide",
+        "Oral semaglutide",
+        "Liraglutide",
+        "Exenatide once‑weekly"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T4-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 70‑year‑old with HFpEF and T2D seeks therapy with proven HF benefit. Which is recommended?",
+      "options": [
+        "Dapagliflozin or empagliflozin",
+        "Liraglutide",
+        "Acarbose",
+        "Meglitinide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T4-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 65‑year‑old with CKD (eGFR 35) and T2D asks about renal protection. Which option is evidence‑based?",
+      "options": [
+        "Start an SGLT2 inhibitor with proven renal benefit",
+        "GLP‑1 RA is the only option",
+        "SGLT2 inhibitors are contraindicated in CKD",
+        "Use DPP‑4 inhibitor for renal protection"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T4-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old with established ASCVD but no HF or CKD asks which SGLT2 inhibitor has MACE reduction evidence. Best answer?",
+      "options": [
+        "Dapagliflozin and ertugliflozin",
+        "Empagliflozin (Grade A) and canagliflozin (Grade B)",
+        "No SGLT2 inhibitor has MACE data",
+        "All SGLT2 inhibitors equally reduce MACE"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T4-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 59‑year‑old with T2D, prior MI, and A1C 7.0% on metformin asks about additional therapy for CV protection. Best option?",
+      "options": [
+        "No additional therapy since A1C is at target",
+        "Add sulfonylurea for CV benefit",
+        "Add a GLP‑1 RA (e.g., liraglutide) or an SGLT2 inhibitor with proven CV benefit",
+        "Switch to insulin"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T4-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 68‑year‑old with T2D and HF with reduced EF wants fewer hospitalizations. Which medication class has proven benefit regardless of diabetes status?",
+      "options": [
+        "DPP‑4 inhibitor",
+        "Acarbose",
+        "SGLT2 inhibitor (dapagliflozin or empagliflozin)",
+        "Meglitinide"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T4-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 72‑year‑old with T2D and CKD (eGFR 42) asks about kidney protection. Which is most appropriate?",
+      "options": [
+        "Initiate an SGLT2 inhibitor with renal outcome data",
+        "Avoid all SGLT2 inhibitors",
+        "Start only GLP‑1 RA for renal protection",
+        "Use sulfonylurea for renoprotection"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T4-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 63‑year‑old with ASCVD but no HF/CKD prefers weekly injections. Which GLP‑1 RA reduces MACE and fits preference?",
+      "options": [
+        "Dulaglutide",
+        "Lixisenatide",
+        "Exenatide QW",
+        "Oral semaglutide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T4-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 66‑year‑old with T2D, HFpEF, and eGFR 50 is on metformin. A1C 6.8%. Best addition primarily for HF benefit?",
+      "options": [
+        "Liraglutide",
+        "Empagliflozin",
+        "Sitagliptin",
+        "Nateglinide"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T4-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 60‑year‑old with T2D and prior stroke asks for an agent with demonstrated MACE reduction among GLP‑1 RAs. Best choice?",
+      "options": [
+        "Lixisenatide",
+        "Oral semaglutide",
+        "Exenatide once‑weekly",
+        "Subcutaneous semaglutide"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T4-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 71‑year‑old with CKD (eGFR 38) and macroalbuminuria asks which SGLT2 inhibitor class evidence supports. Best counseling?",
+      "options": [
+        "Only ertugliflozin has renal data",
+        "SGLT2 inhibitors worsen renal outcomes",
+        "No benefits without diabetes",
+        "Canagliflozin, dapagliflozin, or empagliflozin reduce renal/CV composite outcomes"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T4-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 65‑year‑old with T2D and multiple CV risk factors (no established ASCVD) asks about MACE prevention with SGLT2 inhibitors. Best statement?",
+      "options": [
+        "Strong MACE reduction in risk‑factor‑only cohorts across agents",
+        "No CV benefits even with ASCVD",
+        "Benefits are clear in established ASCVD; evidence in risk factors alone is less certain",
+        "GLP‑1 RAs have no MACE data"
+      ],
+      "answer": "C"
+    }
+  ],
+  "Treatment Intensification": [
+    {
+      "id": "T5-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Dose adjustments, substitutions, or additions should aim to reach target A1C within:",
+      "options": [
+        "1–2 weeks",
+        "3–6 months",
+        "12 months",
+        "At the provider’s convenience"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T5-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Cardiovascular and renal status should be reviewed at least:",
+      "options": [
+        "Annually",
+        "Monthly",
+        "Every 5 years",
+        "Only at diagnosis"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T5-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Before intensifying therapy for rising A1C, which assessment is recommended?",
+      "options": [
+        "Check for precipitating factors (infection, ischemia), adherence, costs, preferences",
+        "Skip assessments and increase dose",
+        "Stop all current agents",
+        "Refer to surgery"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T5-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "When new agents are added, existing glucose‑lowering meds should generally be:",
+      "options": [
+        "Stopped immediately",
+        "Switched to insulin only",
+        "Given at maximal doses always",
+        "Continued unless contraindicated"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T5-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which combination is NOT recommended due to overlapping mechanism?",
+      "options": [
+        "Metformin with SGLT2 inhibitor",
+        "Metformin with GLP‑1 RA",
+        "DPP‑4 inhibitor with GLP‑1 RA",
+        "Metformin with DPP‑4 inhibitor"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T5-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "When selecting add‑on therapy for intensification, which factor is LEAST aligned with the guideline’s person‑centred approach?",
+      "options": [
+        "Need/desire for weight loss",
+        "Prescriber habit without patient input",
+        "Risk and importance of avoiding hypoglycemia",
+        "Comorbidities and insurance coverage"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T5-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Beta‑cell decline over time in type 2 diabetes primarily implies:",
+      "options": [
+        "Immediate insulin for all",
+        "Need for stepwise therapy intensification",
+        "Diet alone will suffice",
+        "Oral agents become completely ineffective in all"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T5-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which is a reasonable intensification goal after a change?",
+      "options": [
+        "Achieve normoglycemia in 1 week",
+        "Reduce A1C by 3% in 2 weeks",
+        "Stop all non‑insulin agents",
+        "Achieve individualized A1C within 3–6 months"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T5-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A patient’s A1C rose from 7.2% to 8.3% in 4 months on metformin. He reports a recent infection and prednisone course. First step?",
+      "options": [
+        "Add bolus insulin immediately",
+        "Stop metformin",
+        "Switch to sulfonylurea only",
+        "Address reversible precipitants and reassess"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T5-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 69‑year‑old prioritizes weight loss and avoiding hypoglycemia. Which intensification choice fits best?",
+      "options": [
+        "GLP‑1 RA or SGLT2 inhibitor",
+        "Sulfonylurea",
+        "High‑dose insulin",
+        "Meglitinide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T5-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 61‑year‑old with A1C 8.4% on metformin + DPP‑4 inhibitor wants stronger effect without weight gain. Best next step?",
+      "options": [
+        "Add sulfonylurea",
+        "Add SGLT2 inhibitor or switch DPP‑4 to GLP‑1 RA",
+        "Stop all agents",
+        "Start thiazolidinedione always"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T5-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old with limited insurance cannot afford GLP‑1 RA/SGLT2i. Which intensification is the lowest‑cost?",
+      "options": [
+        "DPP‑4 inhibitor",
+        "Insulin degludec",
+        "Sulfonylurea",
+        "Acarbose"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T5-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 60‑year‑old with A1C 8.5% on metformin admits poor adherence due to GI upset and costs. First step?",
+      "options": [
+        "Add insulin immediately",
+        "Address side effects/cost barriers before changing regimen",
+        "Switch to TZD without discussion",
+        "Stop all meds"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T5-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 55‑year‑old’s A1C rose after a prolonged infection. After recovery, A1C is 7.6% on same regimen. What does this indicate?",
+      "options": [
+        "Transient precipitant resolved; continue to monitor",
+        "Permanent therapy failure",
+        "Need for immediate insulin",
+        "Metformin is contraindicated"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T5-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 72‑year‑old with mild CKD and high hypoglycemia fear seeks intensification. Which class is best avoided due to higher hypoglycemia risk?",
+      "options": [
+        "GLP‑1 RA",
+        "SGLT2 inhibitor",
+        "Sulfonylurea",
+        "DPP‑4 inhibitor"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T5-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 68‑year‑old with A1C 8.9% prioritizes weight loss. Which intensification aligns with this goal?",
+      "options": [
+        "Thiazolidinedione",
+        "GLP‑1 RA (or consider SGLT2 inhibitor)",
+        "Sulfonylurea",
+        "Increase basal insulin without limit"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T5-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 64‑year‑old with A1C 8.4% on metformin + sulfonylurea has frequent hypoglycemia. Preferred intensification path?",
+      "options": [
+        "Increase sulfonylurea dose",
+        "Add meglitinide",
+        "Add basal‑bolus insulin immediately",
+        "Switch/augment with GLP‑1 RA or SGLT2 inhibitor"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T5-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 59‑year‑old with obesity, OSA, and osteoarthritis wants fewer injections and weight loss. Best intensification?",
+      "options": [
+        "Premixed insulin",
+        "Acarbose",
+        "Meglitinide",
+        "Once‑weekly GLP‑1 RA"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T5-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 70‑year‑old on metformin + GLP‑1 RA still above target and has CKD with albuminuria. Next step?",
+      "options": [
+        "Add sulfonylurea first",
+        "Stop GLP‑1 RA",
+        "Add an SGLT2 inhibitor with renal benefit if eGFR allows",
+        "No further options"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T5-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 63‑year‑old A1C 8.2% after 4 months of dual therapy asks if the regimen failed. Best response?",
+      "options": [
+        "Targets should be met within 3–6 months; consider adjusting now",
+        "Wait 12 months before intensifying",
+        "Therapy cannot be intensified further",
+        "Stop all meds and retry lifestyle only"
+      ],
+      "answer": "A"
+    }
+  ],
+  "Comparative Drug Class Efficacy/Safety": [
+    {
+      "id": "T6-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which classes have lower hypoglycemia risk compared with sulfonylureas and insulin?",
+      "options": [
+        "Incretins (GLP‑1 RA/DPP‑4), SGLT2 inhibitors, thiazolidinediones",
+        "Sulfonylureas and insulin",
+        "Meglitinides and insulin",
+        "Acarbose and sulfonylureas"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T6-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which classes are associated with weight loss?",
+      "options": [
+        "GLP‑1 RAs/GIP‑GLP‑1 RAs and SGLT2 inhibitors",
+        "DPP‑4 inhibitors and TZDs",
+        "Sulfonylureas and insulin",
+        "Acarbose and TZDs"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T6-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which agents are associated with the most weight gain?",
+      "options": [
+        "DPP‑4 inhibitors",
+        "GLP‑1 RAs",
+        "SGLT2 inhibitors",
+        "Insulin, sulfonylureas, thiazolidinediones"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T6-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which class has a neutral effect on weight?",
+      "options": [
+        "GLP‑1 RAs",
+        "DPP‑4 inhibitors",
+        "Insulin",
+        "Sulfonylureas"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T6-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "SGLT2 inhibitor glycemic efficacy is reduced primarily by:",
+      "options": [
+        "Older age",
+        "Declining eGFR",
+        "Female sex",
+        "Evening dosing"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T6-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Insulin has the greatest potential for A1C lowering because:",
+      "options": [
+        "It is always weight neutral",
+        "It prevents beta‑cell decline",
+        "It has no dose ceiling (limited by hypoglycemia)",
+        "It is combined only with sulfonylureas"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T6-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Compared with sulfonylureas, DPP‑4 inhibitors as add‑on to metformin demonstrate:",
+      "options": [
+        "Greater weight gain",
+        "More hypoglycemia",
+        "Lower hypoglycemia risk and weight neutrality",
+        "No difference in safety"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T6-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Typical magnitude of weight gain seen with insulin, sulfonylureas, or TZDs in trials is approximately:",
+      "options": [
+        "<0.5 kg",
+        "~1.5–5.0 kg",
+        ">10 kg",
+        "No weight change"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T6-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which pairing is most accurate regarding weight effect?",
+      "options": [
+        "GLP‑1 RA → weight loss; DPP‑4 inhibitor → weight neutral",
+        "DPP‑4 inhibitor → weight loss; SGLT2 → weight gain",
+        "Sulfonylurea → weight neutral",
+        "Insulin → weight loss"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T6-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which class selection best minimizes hypoglycemia when added to metformin?",
+      "options": [
+        "GLP‑1 RA or SGLT2 inhibitor",
+        "Sulfonylurea",
+        "High‑dose insulin",
+        "Meglitinide"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T6-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 64‑year‑old wants an oral agent with weight loss. Which is preferred?",
+      "options": [
+        "DPP‑4 inhibitor",
+        "SGLT2 inhibitor",
+        "TZD",
+        "Sulfonylurea"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T6-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old with eGFR 35 mL/min/1.73 m^2 asks about SGLT2 inhibitor glycemic effect. Best response?",
+      "options": [
+        "Glycemic effect declines as eGFR falls",
+        "Efficacy increases with lower eGFR",
+        "Independent of kidney function",
+        "Causes immediate hypoglycemia"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T6-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 70‑year‑old on metformin seeks an add‑on with low hypoglycemia risk and potential weight loss. Best option?",
+      "options": [
+        "Sulfonylurea",
+        "Insulin",
+        "Meglitinide",
+        "GLP‑1 RA or SGLT2 inhibitor"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T6-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 59‑year‑old needs add‑on therapy but wants to avoid weight gain. Which class is weight neutral?",
+      "options": [
+        "Sulfonylurea",
+        "TZD",
+        "Insulin",
+        "DPP‑4 inhibitor"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T6-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 66‑year‑old with A1C 8.1% and nocturnal hypoglycemia on sulfonylurea asks about alternatives. Best suggestion?",
+      "options": [
+        "Increase sulfonylurea dose",
+        "Switch to GLP‑1 RA or SGLT2 inhibitor",
+        "Add meglitinide",
+        "Continue current regimen"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T6-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 62‑year‑old has edema and weight gain on TZD. Which alternative class avoids weight gain?",
+      "options": [
+        "Sulfonylurea",
+        "SGLT2 inhibitor",
+        "Insulin",
+        "Meglitinide"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T6-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 55‑year‑old with eGFR 40 prefers oral agents and weight loss. Which counseling is accurate?",
+      "options": [
+        "SGLT2 inhibitors promote weight loss but glycemic efficacy declines with lower eGFR",
+        "SGLT2 efficacy improves as eGFR falls",
+        "DPP‑4 inhibitors cause consistent weight loss",
+        "Sulfonylureas are weight neutral"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T6-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 68‑year‑old with frequent hypoglycemia on insulin seeks to reduce episodes while maintaining control. Which non‑insulin add‑on is reasonable?",
+      "options": [
+        "Higher sulfonylurea dose",
+        "GLP‑1 RA",
+        "Meglitinide",
+        "Switch to acarbose"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T6-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 60‑year‑old asks which class offers greatest A1C reduction potential overall. Best answer?",
+      "options": [
+        "DPP‑4 inhibitors",
+        "Acarbose",
+        "Meglitinides",
+        "Insulin (limited by hypoglycemia)"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T6-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 72‑year‑old on metformin wants weight loss and CV benefit. Which add‑on best fits both?",
+      "options": [
+        "Sulfonylurea",
+        "GLP‑1 RA",
+        "TZD",
+        "Acarbose"
+      ],
+      "answer": "B"
+    }
+  ],
+  "Cardiorenal Outcome Evidence (Trials)": [
+    {
+      "id": "T7-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which trial demonstrated MACE reduction with liraglutide?",
+      "options": [
+        "ELIXA",
+        "LEADER",
+        "EXSCEL",
+        "PIONEER‑6"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T7-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which trial showed MACE reduction with subcutaneous semaglutide?",
+      "options": [
+        "PIONEER‑6",
+        "SUSTAIN‑6",
+        "ELIXA",
+        "EXSCEL"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T7-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which SGLT2 CVOT first demonstrated significant CV and mortality benefits in T2D with established CVD?",
+      "options": [
+        "DECLARE‑TIMI 58",
+        "VERTIS‑CV",
+        "EMPA‑REG OUTCOME",
+        "CANVAS‑R"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T7-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Which trial program showed canagliflozin reduced MACE?",
+      "options": [
+        "VERTIS‑CV",
+        "DECLARE‑TIMI 58",
+        "CANVAS Program",
+        "DAPA‑HF"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T7-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which GLP‑1 RA agent did NOT demonstrate clear cardiorenal outcome benefits in its CVOT?",
+      "options": [
+        "Liraglutide (LEADER)",
+        "Lixisenatide (ELIXA)",
+        "Dulaglutide (REWIND)",
+        "Subcutaneous semaglutide (SUSTAIN‑6)"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T7-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which SGLT2 inhibitor trial did NOT show a statistically significant MACE reduction, despite other benefits?",
+      "options": [
+        "EMPA‑REG OUTCOME (empagliflozin)",
+        "DECLARE‑TIMI 58 (dapagliflozin)",
+        "CANVAS (canagliflozin)",
+        "CANVAS‑R (canagliflozin)"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T7-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which dedicated CKD trials demonstrated renal protection with SGLT2 inhibitors?",
+      "options": [
+        "EMPA‑REG, CANVAS, DECLARE",
+        "SUSTAIN, LEADER, REWIND",
+        "CREDENCE, DAPA‑CKD, EMPA‑KIDNEY",
+        "EXSCEL, ELIXA"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T7-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which heart failure trials demonstrated benefits of SGLT2 inhibitors regardless of diabetes status?",
+      "options": [
+        "LEADER, SUSTAIN‑6",
+        "DAPA‑HF, EMPEROR‑Reduced/Preserved, DELIVER",
+        "CREDENCE, DAPA‑CKD",
+        "CANVAS, DECLARE"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T7-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which statement best summarizes the heterogeneity in ‘high CV risk’ across SGLT2 CVOTs?",
+      "options": [
+        "All trials enrolled identical populations",
+        "Only primary prevention cohorts were included",
+        "MACE results were uniform across all agents",
+        "Definitions varied (established CVD vs multiple risk factors), affecting MACE results"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T7-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Beyond MACE, which consistent benefits were seen across SGLT2 inhibitor CVOTs?",
+      "options": [
+        "Significant reductions in retinopathy and neuropathy",
+        "Marked A1C drops > 2.5%",
+        "Reductions in HF hospitalization and renal outcomes",
+        "Weight gain benefits"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T7-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which statement about oral semaglutide (PIONEER‑6) is most accurate?",
+      "options": [
+        "It reduced MACE similarly to liraglutide",
+        "It increased HF hospitalizations",
+        "It worsened renal outcomes",
+        "It did not demonstrate definitive cardiorenal outcome reduction like some injectable GLP‑1 RAs"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T7-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "FLOW trial (2024) focused on which outcome with semaglutide in T2D with CKD?",
+      "options": [
+        "HF hospitalization only",
+        "Retinal outcomes",
+        "Hypoglycemia rates",
+        "Renal outcomes (CKD progression)"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T7-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 67‑year‑old with T2D and prior MI asks which SGLT2 trial first showed CV and mortality benefits. Best answer?",
+      "options": [
+        "DECLARE‑TIMI 58",
+        "VERTIS‑CV",
+        "CANVAS‑R",
+        "EMPA‑REG OUTCOME"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T7-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 70‑year‑old with T2D and CKD (eGFR 40) asks which trials support renal protection with SGLT2 inhibitors. Best response?",
+      "options": [
+        "CREDENCE, DAPA‑CKD, EMPA‑KIDNEY",
+        "LEADER and REWIND",
+        "EXSCEL and ELIXA",
+        "PIONEER‑6 only"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T7-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 72‑year‑old with HF (LVEF 35%) asks which agents lower HF hospitalization risk regardless of diabetes. Best answer?",
+      "options": [
+        "Dapagliflozin or empagliflozin (based on DAPA‑HF/EMPEROR)",
+        "Liraglutide",
+        "Sitagliptin",
+        "Acarbose"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T7-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 64‑year‑old with multiple CV risk factors but no established CVD asks if GLP‑1 RAs reduce MACE. Best counseling?",
+      "options": [
+        "Strong MACE reduction proven in risk‑factor‑only cohorts",
+        "Benefit is clearest in established CVD; evidence in risk‑factor‑only patients is less certain",
+        "No benefit in any population",
+        "Only DPP‑4 inhibitors reduce MACE"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T7-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 69‑year‑old with ASCVD and CKD asks whether dapagliflozin reduced MACE in DECLARE‑TIMI 58. Best answer?",
+      "options": [
+        "DECLARE showed the largest MACE reduction among SGLT2 CVOTs",
+        "DECLARE worsened renal outcomes",
+        "DECLARE did not show significant MACE reduction, but showed HF/renal benefits",
+        "DECLARE increased HF events"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T7-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 62‑year‑old with T2D and prior stroke asks which GLP‑1 RA trial supports MACE reduction. Best answer?",
+      "options": [
+        "ELIXA (lixisenatide)",
+        "EXSCEL (exenatide QW)",
+        "REWIND (dulaglutide) and SUSTAIN‑6 (semaglutide)",
+        "PIONEER‑6 (oral semaglutide)"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T7-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 71‑year‑old with CKD asks if SGLT2 renal benefits extend to people without diabetes. Best statement?",
+      "options": [
+        "Only people with diabetes benefit",
+        "Trials excluded non‑diabetic CKD",
+        "DAPA‑CKD and EMPA‑KIDNEY included many without diabetes and showed similar benefits",
+        "Benefits require A1C > 8%"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T7-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 66‑year‑old with ASCVD asks whether ertugliflozin reduced MACE. Best answer?",
+      "options": [
+        "VERTIS‑CV did not show significant MACE reduction",
+        "VERTIS‑CV showed the largest MACE reduction",
+        "No trial exists",
+        "Ertugliflozin increased MACE"
+      ],
+      "answer": "A"
+    }
+  ],
+  "Insulin Therapy Progression": [
+    {
+      "id": "T8-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "When adding insulin for fasting hyperglycemia, which initial regimen is recommended?",
+      "options": [
+        "Once‑daily basal insulin (NPH or long‑acting analogue)",
+        "Immediate full basal‑bolus",
+        "Premixed insulin only",
+        "Rapid‑acting insulin only"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T8-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Long‑acting insulin analogues vs NPH insulin are associated with:",
+      "options": [
+        "Lower risk of symptomatic and nocturnal hypoglycemia",
+        "Higher risk of hypoglycemia",
+        "No differences",
+        "Increased weight loss"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T8-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Compared with glargine U‑100, insulin degludec is associated with:",
+      "options": [
+        "Higher hypoglycemia",
+        "No difference",
+        "Greater weight gain",
+        "Lower rates of overall, symptomatic, nocturnal, and severe hypoglycemia"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T8-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "When mealtime control is needed after basal insulin, the recommended approach is to:",
+      "options": [
+        "Switch to NPH only",
+        "Add all three mealtime doses immediately",
+        "Stop basal insulin",
+        "Add stepwise bolus at the largest meal first"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T8-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "After starting basal insulin, which non‑insulin agents should generally be continued or initiated?",
+      "options": [
+        "Incretins and/or SGLT2 inhibitors",
+        "Sulfonylureas and meglitinides",
+        "Acarbose only",
+        "No other agents"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T8-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Once bolus insulin is introduced, which class should generally be discontinued to reduce hypoglycemia risk?",
+      "options": [
+        "Insulin secretagogues (sulfonylureas, meglitinides)",
+        "Metformin",
+        "SGLT2 inhibitors",
+        "GLP‑1 RAs"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T8-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Rapid‑acting insulin analogues compared with regular insulin in T2D are associated with:",
+      "options": [
+        "Higher hypoglycemia consistently",
+        "No difference in any study",
+        "Inability to control postprandial glucose",
+        "Lower hypoglycemia in some studies"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T8-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Basal insulin should be titrated to which target primarily?",
+      "options": [
+        "Fasting glucose targets",
+        "Postprandial glucose at lunch",
+        "Bedtime glucose only",
+        "Random glucose only"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T8-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which statement about glargine U‑300 vs glargine U‑100 is supported by evidence?",
+      "options": [
+        "U‑300 may lower nocturnal hypoglycemia rates compared with U‑100",
+        "U‑300 causes more nocturnal hypoglycemia",
+        "They are identical in hypoglycemia risk",
+        "U‑300 is contraindicated in T2D"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T8-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which strategy achieved similar A1C with less hypoglycemia compared to immediate full basal‑bolus?",
+      "options": [
+        "Premixed BID from the start",
+        "Basal insulin only",
+        "Stepwise addition of a single mealtime bolus (Basal‑Plus)",
+        "Basal switch to NPH"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T8-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "In people starting basal insulin, adding which class can reduce insulin dose requirements and weight gain?",
+      "options": [
+        "GLP‑1 RA",
+        "Sulfonylurea",
+        "Meglitinide",
+        "Acarbose"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T8-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "Which basal insulin shows lower hypoglycemia than glargine U‑100 in RCTs of T2D?",
+      "options": [
+        "NPH",
+        "Detemir consistently",
+        "Regular insulin",
+        "Degludec"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T8-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 62‑year‑old on metformin needs insulin due to fasting hyperglycemia. Which initiation is preferred?",
+      "options": [
+        "Start full basal‑bolus immediately",
+        "Add once‑daily basal insulin and titrate",
+        "Add rapid‑acting insulin only",
+        "Switch to premixed only"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T8-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 70‑year‑old on basal insulin has high post‑dinner glucose. Next best step?",
+      "options": [
+        "Increase basal indefinitely",
+        "Stop all non‑insulin agents",
+        "Switch to regular insulin only",
+        "Add a mealtime bolus at the largest meal and titrate"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T8-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 66‑year‑old on basal insulin + sulfonylurea has frequent hypoglycemia after adding a lunch bolus. Best adjustment?",
+      "options": [
+        "Increase sulfonylurea",
+        "Stop basal insulin",
+        "Stop the sulfonylurea",
+        "Add a second bolus immediately"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T8-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 58‑year‑old on basal insulin asks about reducing nocturnal hypoglycemia. Which basal switch is supported by evidence?",
+      "options": [
+        "Switch to NPH",
+        "Switch to regular insulin",
+        "Increase basal dose",
+        "Switch to degludec"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T8-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 64‑year‑old has A1C 7.9% despite basal insulin + metformin + SGLT2 inhibitor. Fasting glucose is at target but post‑prandials are high. Next step?",
+      "options": [
+        "Increase basal insulin only",
+        "Stop metformin",
+        "Add stepwise mealtime bolus insulin",
+        "Add sulfonylurea"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T8-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 72‑year‑old on basal insulin experiences nocturnal hypoglycemia. Which basal option has lower nocturnal hypoglycemia risk than glargine U‑100?",
+      "options": [
+        "NPH",
+        "Glargine U‑300 or degludec",
+        "Detemir is always superior",
+        "Regular insulin"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T8-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 55‑year‑old with obesity prefers fewer injections and weight control when intensifying beyond basal insulin. Best option?",
+      "options": [
+        "Add full basal‑bolus immediately",
+        "Switch to premixed only",
+        "Add a GLP‑1 RA instead of multiple boluses initially",
+        "Add sulfonylurea"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T8-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 69‑year‑old asks whether rapid‑acting analogues reduce hypoglycemia compared with regular insulin. Best answer?",
+      "options": [
+        "Some studies show lower hypoglycemia with analogues",
+        "Analogues always increase hypoglycemia",
+        "No RCTs compare them",
+        "Regular insulin eliminates hypoglycemia"
+      ],
+      "answer": "A"
+    }
+  ],
+  "Combining Insulin With Other Agents": [
+    {
+      "id": "T9-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "When initiating basal insulin, which non‑insulin agents should generally be continued or started?",
+      "options": [
+        "Sulfonylurea",
+        "Meglitinide",
+        "Acarbose",
+        "GLP‑1 RA and/or SGLT2 inhibitor"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T9-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Adding non‑insulin agents when starting insulin may have which benefit?",
+      "options": [
+        "Increased hypoglycemia",
+        "No added benefit",
+        "Immediate remission",
+        "Lower insulin dose requirements and less weight gain"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T9-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Once bolus insulin is added, which medications should usually be discontinued?",
+      "options": [
+        "Sulfonylureas and meglitinides",
+        "Metformin",
+        "DPP‑4 inhibitors",
+        "SGLT2 inhibitors"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T9-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Why are sulfonylureas usually stopped after adding mealtime insulin?",
+      "options": [
+        "To increase weight loss",
+        "To reduce hypoglycemia risk",
+        "They are ineffective with insulin",
+        "They are contraindicated in all insulin users"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T9-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Combining basal insulin with which class improves A1C with less hypoglycemia and weight gain than intensifying insulin alone?",
+      "options": [
+        "Sulfonylurea",
+        "Meglitinide",
+        "Acarbose",
+        "GLP‑1 RA"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T9-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "In people on multiple daily injections (MDI), adding which class reduced weight and insulin dose without increasing hypoglycemia?",
+      "options": [
+        "Sulfonylurea",
+        "Meglitinide",
+        "SGLT2 inhibitor",
+        "Acarbose"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Combining insulin with metformin compared with insulin alone typically results in:",
+      "options": [
+        "More hypoglycemia",
+        "Worse glycemic control",
+        "Less weight gain and hypoglycemia",
+        "Immediate discontinuation of insulin"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which class should be considered over secretagogues when insulin is intensified due to lower hypoglycemia risk?",
+      "options": [
+        "Meglitinide",
+        "Another sulfonylurea",
+        "GLP‑1 RA or SGLT2 inhibitor",
+        "Thiazolidinedione"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 65‑year‑old on basal insulin + metformin remains above target. Which add‑on is most likely to improve A1C with weight benefit?",
+      "options": [
+        "Increase basal indefinitely",
+        "GLP‑1 RA",
+        "Sulfonylurea",
+        "Meglitinide"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T9-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 60‑year‑old on MDI asks about adding an SGLT2 inhibitor. Which outcome is expected based on trials?",
+      "options": [
+        "No change in metrics",
+        "Marked increase in hypoglycemia",
+        "Improved glucose, weight loss, lower insulin dose without more hypoglycemia",
+        "Universal DKA"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 70‑year‑old on basal insulin + sulfonylurea has frequent lows after adding lunch bolus. Best adjustment?",
+      "options": [
+        "Increase sulfonylurea",
+        "Stop basal insulin",
+        "Stop sulfonylurea",
+        "Add bedtime bolus"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old asks if metformin should be continued after starting basal insulin. Best answer?",
+      "options": [
+        "No, metformin must be stopped",
+        "Metformin causes hypoglycemia with insulin",
+        "Yes, continuing metformin may reduce insulin dose and weight gain",
+        "Continue only if A1C < 7%"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 62‑year‑old on basal insulin and metformin remains above A1C target with post‑dinner highs. Best next step to minimize hypoglycemia and weight gain?",
+      "options": [
+        "Add sulfonylurea",
+        "Add meglitinide",
+        "Add GLP‑1 RA",
+        "Increase basal only"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 59‑year‑old on MDI is obese and asks about adding an oral agent for weight loss and glycemic benefit. Best choice?",
+      "options": [
+        "Add sulfonylurea",
+        "Add SGLT2 inhibitor",
+        "Add acarbose",
+        "Add meglitinide"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T9-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 68‑year‑old on basal insulin + GLP‑1 RA has A1C 7.6% with high post‑breakfast glucose. Next step?",
+      "options": [
+        "Increase basal only",
+        "Stop GLP‑1 RA",
+        "Add a breakfast bolus insulin dose",
+        "Add sulfonylurea"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 71‑year‑old on basal insulin reports recurrent afternoon hypoglycemia after adding a lunch bolus while still on glyburide. Best adjustment?",
+      "options": [
+        "Increase lunch bolus",
+        "Add meglitinide",
+        "Stop glyburide (a sulfonylurea)",
+        "Stop basal insulin"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T9-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 63‑year‑old on MDI asks whether adding empagliflozin will increase hypoglycemia. Best counseling?",
+      "options": [
+        "They universally increase hypoglycemia",
+        "They are contraindicated with insulin",
+        "They offer no glycemic benefit",
+        "SGLT2 inhibitors improved control with weight loss and no increased hypoglycemia in trials"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T9-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old prefers fewer injections when intensifying beyond basal insulin. Which is a reasonable alternative to multiple boluses?",
+      "options": [
+        "Add sulfonylurea",
+        "Add meglitinide",
+        "Only increase basal dose",
+        "Add a GLP‑1 RA"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T9-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 70‑year‑old with obesity on basal insulin + metformin seeks weight loss and lower insulin dose. Which add‑on aligns with evidence?",
+      "options": [
+        "Sulfonylurea",
+        "SGLT2 inhibitor",
+        "Meglitinide",
+        "TZD"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T9-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 64‑year‑old on basal‑bolus + sulfonylurea has frequent lows. Guideline‑concordant action?",
+      "options": [
+        "Discontinue the sulfonylurea",
+        "Add another bolus",
+        "Increase basal dose",
+        "Stop metformin"
+      ],
+      "answer": "A"
+    }
+  ],
+  "Special Populations and Safety Considerations": [
+    {
+      "id": "T10-Q01",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Safety of incretin agents (GLP‑1 RA/GIP‑GLP‑1) and SGLT2 inhibitors in pregnancy is:",
+      "options": [
+        "Proven safe in all trimesters",
+        "Unknown; avoid or discontinue in pregnancy or if not using reliable contraception",
+        "Contraindicated only during breastfeeding",
+        "Safe if A1C > 9%"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T10-Q02",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Maximum doses of many antihyperglycemic medications are determined by which factor?",
+      "options": [
+        "Age",
+        "Sex",
+        "Renal function (eGFR)",
+        "Body weight alone"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q03",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "All individuals starting insulin should receive education about:",
+      "options": [
+        "Prevention and management of hypoglycemia",
+        "Carbohydrate counting only",
+        "Insulin pump use only",
+        "Foot care only"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T10-Q04",
+      "type": "standard",
+      "difficulty": 1,
+      "stem": "Long‑term use of metformin has been associated with which deficiency?",
+      "options": [
+        "Iron deficiency",
+        "Vitamin D deficiency",
+        "Vitamin B12 deficiency",
+        "Folate deficiency"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q05",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "Which statement about pancreatitis risk with incretins best reflects evidence cited in the guideline?",
+      "options": [
+        "Markedly increased risk in all users",
+        "No conclusive increased risk found in meta‑analyses",
+        "Contraindicated due to pancreatitis risk",
+        "Only safe with insulin"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T10-Q06",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "SGLT2 inhibitors are associated with which uncommon but notable risk in T2D?",
+      "options": [
+        "Severe bradycardia",
+        "Pancreatic cancer",
+        "Seizures",
+        "Diabetic ketoacidosis (rare)"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T10-Q07",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "SGLT2 inhibitors have which infection‑related safety signal?",
+      "options": [
+        "Increased bacterial pneumonia",
+        "Increased C. difficile",
+        "Higher genital mycotic infections",
+        "Increased HIV"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q08",
+      "type": "standard",
+      "difficulty": 2,
+      "stem": "For a person planning pregnancy, which class should be avoided or discontinued?",
+      "options": [
+        "Metformin",
+        "Basal insulin analogues",
+        "GLP‑1 RA and SGLT2 inhibitor",
+        "Acarbose"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q09",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 30‑year‑old with T2D planning pregnancy is on dapagliflozin + semaglutide. Best recommendation?",
+      "options": [
+        "Continue both until second trimester",
+        "Continue SGLT2 inhibitor only",
+        "Discontinue both agents due to unknown safety in pregnancy",
+        "Stop all therapy"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q10",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 68‑year‑old on canagliflozin asks about bone health. Which statement reflects trial findings discussed in the guideline?",
+      "options": [
+        "SGLT2 inhibitors universally increase fracture risk",
+        "Bone safety signals have been evaluated with variable findings; overall CV/renal benefits remain",
+        "They improve bone density in all users",
+        "They are contraindicated if age > 65"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": "T10-Q11",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 64‑year‑old with a history of pancreatitis asks about GLP‑1 RA risk. Best counseling based on cited evidence?",
+      "options": [
+        "Meta‑analyses do not show a conclusive increased pancreatitis risk",
+        "GLP‑1 RAs are proven to double pancreatitis risk",
+        "Only DPP‑4 inhibitors carry risk",
+        "GLP‑1 RAs cause pancreatitis in >10%"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T10-Q12",
+      "type": "standard",
+      "difficulty": 3,
+      "stem": "A 58‑year‑old on long‑term metformin presents with neuropathy and macrocytosis. Which lab is most relevant?",
+      "options": [
+        "Serum ferritin",
+        "TSH",
+        "Vitamin B12 level",
+        "25‑OH Vitamin D"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q13",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 27‑year‑old with T2D not using reliable contraception is taking semaglutide. Best action?",
+      "options": [
+        "Continue; it is safe",
+        "Switch to SGLT2 inhibitor",
+        "Discontinue semaglutide due to unknown safety in pregnancy",
+        "Add sulfonylurea"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q14",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 45‑year‑old on empagliflozin presents with nausea and malaise after low‑carb diet and illness. Glucose is modestly elevated and ketones positive. Which risk does this illustrate?",
+      "options": [
+        "Severe hypoglycemia from SGLT2",
+        "Acute pancreatitis from SGLT2",
+        "Thyroid storm",
+        "(Euglycemic) diabetic ketoacidosis with SGLT2 inhibitor"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T10-Q15",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 62‑year‑old started on SGLT2 inhibitor reports genital itching. Most likely diagnosis?",
+      "options": [
+        "Urinary tract carcinoma",
+        "Pneumonia",
+        "C. difficile colitis",
+        "Genital mycotic infection"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T10-Q16",
+      "type": "vignette",
+      "difficulty": 2,
+      "stem": "A 58‑year‑old on metformin for 8 years presents with anemia and paresthesias. Which evaluation is most appropriate?",
+      "options": [
+        "Check vitamin B12 level",
+        "Check serum calcium",
+        "Order MRI brain",
+        "Stop all diabetes meds"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": "T10-Q17",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 35‑year‑old with T2D planning to conceive is on liraglutide and ertugliflozin. Most appropriate plan?",
+      "options": [
+        "Continue both until second trimester",
+        "Switch to DPP‑4 inhibitor for pregnancy",
+        "Stop both agents and transition to therapies with known pregnancy safety",
+        "Only stop ertugliflozin"
+      ],
+      "answer": "C"
+    },
+    {
+      "id": "T10-Q18",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 70‑year‑old on canagliflozin asks about infections. Best counseling?",
+      "options": [
+        "Severe UTIs are inevitable",
+        "There are no infection risks",
+        "Antifungal prophylaxis is mandatory",
+        "Genital mycotic infections are more common; counsel on hygiene and early treatment"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T10-Q19",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 52‑year‑old with prior pancreatitis asks if GLP‑1 RA is absolutely contraindicated. Best response?",
+      "options": [
+        "Absolutely contraindicated",
+        "Safer to use DPP‑4 inhibitor only",
+        "No monitoring is needed",
+        "Evidence does not show conclusive increased risk; discuss risks/benefits and monitor"
+      ],
+      "answer": "D"
+    },
+    {
+      "id": "T10-Q20",
+      "type": "vignette",
+      "difficulty": 3,
+      "stem": "A 29‑year‑old pregnant patient with T2D is on metformin. She asks about adding an SGLT2 inhibitor for kidney protection. Best answer?",
+      "options": [
+        "Safe to start now",
+        "Only start in third trimester",
+        "Start GLP‑1 RA instead",
+        "Avoid SGLT2 inhibitors in pregnancy due to unknown safety"
+      ],
+      "answer": "D"
+    }
+  ]
+}

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress-text {
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background-color: #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #4CAF50, #66bb6a);
+            border-radius: 12px;
+            transition: width 0.3s ease;
+        }
+
+        .confidence-container {
+            margin-bottom: 30px;
+        }
+
+        .confidence-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .confidence-fill {
+            height: 100%;
+            width: 50%;
+            background: linear-gradient(90deg, #ffa500, #ffb732);
+            border-radius: 10px;
+            transition: width 0.5s ease, background 0.5s ease;
+        }
+
+        #quiz-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .answer-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .answer-btn:hover:not(:disabled) {
+            background-color: #e0e0e0;
+            border-color: #4CAF50;
+        }
+
+        .answer-btn.selected {
+            background-color: #2196F3;
+            color: white;
+            border-color: #2196F3;
+        }
+
+        .answer-btn.correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .answer-btn.incorrect {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .answer-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #submit-btn, #next-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            flex: 1;
+        }
+
+        #submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            display: none;
+        }
+
+        #submit-btn:hover:not(:disabled) {
+            background-color: #45a049;
+        }
+
+        #submit-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        #next-btn {
+            display: none;
+            background-color: #2196F3;
+            color: white;
+        }
+
+        #next-btn:hover {
+            background-color: #1976D2;
+        }
+
+        #results {
+            display: none;
+            text-align: center;
+        }
+
+        #results h2 {
+            color: #4CAF50;
+        }
+
+        .score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+
+        .timing-stats {
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .timing-stats h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .bar-container {
+            margin-bottom: 15px;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .bar {
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .bar-fill.fast {
+            background: linear-gradient(90deg, #4CAF50, #66bb6a);
+        }
+
+        .bar-fill.average {
+            background: linear-gradient(90deg, #ffa500, #ffb732);
+        }
+
+        .bar-fill.slow {
+            background: linear-gradient(90deg, #ff6b6b, #ff8787);
+        }
+
+        .checkpoint-timing {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .checkpoint-bar-container {
+            margin-bottom: 20px;
+        }
+
+        .checkpoint-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .checkpoint-bar {
+            height: 28px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .checkpoint-bar-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .checkpoint-bar-fill.fast {
+            background: linear-gradient(90deg, #4CAF50, #66bb6a);
+        }
+
+        .checkpoint-bar-fill.average {
+            background: linear-gradient(90deg, #ffa500, #ffb732);
+        }
+
+        .checkpoint-bar-fill.slow {
+            background: linear-gradient(90deg, #ff6b6b, #ff8787);
+        }
+
+        .timer-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            z-index: 100;
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            z-index: 100;
+        }
+
+        .home-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <a class="home-btn" href="index.html">
+        <span class="home-icon">🏠</span>
+        <span class="home-text">Home</span>
+    </a>
+
+    <div class="timer-container">
+        <span id="quiz-timer">00:00</span>
+    </div>
+
+    <div class="confidence-container">
+        <h3 class="confidence-title">Confidence Level</h3>
+        <div class="confidence-bar">
+            <div class="confidence-fill" id="confidence-fill"></div>
+        </div>
+        <span id="confidence-value">50%</span>
+    </div>
+
+    <div id="quiz-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-text">Question <span id="current-question">0</span>/<span id="total-questions">0</span></p>
+        
+        <h2 id="question">Loading questions...</h2>
+        <div id="answers"></div>
+        
+        <div class="button-group">
+            <button id="submit-btn" onclick="submitAnswer()" disabled>Submit Answer</button>
+            <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+        </div>
+        
+        <div id="results" style="display: none;">
+            <h2>Quiz Complete!</h2>
+            <div class="score"><span id="score"></span>/<span id="total"></span></div>
+            <p>Final Confidence Level: <span id="final-confidence"></span></p>
+            <p>Total Answer Changes: <span id="answer-changes-display" style="font-weight: bold; color: #ff9800;">0</span></p>
+            <p>Total Time: <span id="total-time-display">00:00</span></p>
+            
+            <div class="results-stats">
+                <div class="stat-box">
+                    <h3>Final Confidence Level</h3>
+                    <p class="stat-value"><span id="final-confidence-box"></span></p>
+                </div>
+                
+                <div class="stat-box">
+                    <h3>Answer Changes</h3>
+                    <p class="stat-value"><span id="answer-changes-box">0</span></p>
+                </div>
+                
+                <div class="stat-box">
+                    <h3>Total Time</h3>
+                    <p class="stat-value"><span id="total-time-box">00:00</span></p>
+                </div>
+            </div>
+            
+            <div class="timing-stats">
+                <h3>Response Time Analysis</h3>
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Fast</span>
+                        <span id="fast-count-display">0</span>
+                    </div>
+                    <div class="bar">
+                        <div class="bar-fill fast" id="fast-bar">0</div>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Average</span>
+                        <span id="avg-count-display">0</span>
+                    </div>
+                    <div class="bar">
+                        <div class="bar-fill average" id="avg-bar">0</div>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Slow</span>
+                        <span id="slow-count-display">0</span>
+                    </div>
+                    <div class="bar">
+                        <div class="bar-fill slow" id="slow-bar">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let quizData = [];
+        let allQuestions = [];
+        let currentQuestion = 0;
+        let score = 0;
+        let totalConfidence = 0;
+        let responseTimes = [];
+        let questionStartTime = Date.now();
+        let selectedAnswerIndex = null;
+        let isAnswerSubmitted = false;
+        let answerChangeCount = 0;
+        let totalAnswerChanges = 0;
+        let fastCount = 0;
+        let avgCount = 0;
+        let slowCount = 0;
+        let checkpointFastCount = 0;
+        let checkpointAvgCount = 0;
+        let checkpointSlowCount = 0;
+
+        let quizTimerInterval = null;
+        let quizStartTime = null;
+        let quizEndTime = null;
+        let elapsedBeforePause = 0;
+        let isTimerRunning = false;
+
+        function startQuizTimer() {
+            if (isTimerRunning) return;
+            isTimerRunning = true;
+            
+            if (!quizStartTime) {
+                quizStartTime = Date.now();
+            }
+
+            const timerEl = document.getElementById('quiz-timer');
+            if (!timerEl) {
+                console.error('Timer element not found');
+                return;
+            }
+            
+            if (quizTimerInterval) clearInterval(quizTimerInterval);
+
+            quizTimerInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - quizStartTime + elapsedBeforePause) / 1000);
+                const minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
+                const seconds = String(elapsed % 60).padStart(2, '0');
+                timerEl.textContent = `${minutes}:${seconds}`;
+            }, 1000);
+            
+            // Update immediately
+            const timerEl2 = document.getElementById('quiz-timer');
+            if (timerEl2) {
+                const elapsed = Math.floor((Date.now() - quizStartTime) / 1000);
+                const minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
+                const seconds = String(elapsed % 60).padStart(2, '0');
+                timerEl2.textContent = `${minutes}:${seconds}`;
+            }
+        }
+
+        function pauseQuizTimer() {
+            if (!isTimerRunning) return;
+            isTimerRunning = false;
+            elapsedBeforePause += Date.now() - quizStartTime;
+            if (quizTimerInterval) clearInterval(quizTimerInterval);
+            quizTimerInterval = null;
+        }
+
+        function stopQuizTimer() {
+            if (quizTimerInterval) clearInterval(quizTimerInterval);
+            quizTimerInterval = null;
+            isTimerRunning = false;
+            elapsedBeforePause = 0;
+        }
+
+        function getAcceptedTimeSeconds(question) {
+            const wordCount = (question.stem || '').trim().split(/\s+/).filter(Boolean).length;
+            const difficulty = Number(question.difficulty || 1);
+            return (wordCount / 4) + (difficulty * 5);
+        }
+
+        function updateTimingCounters(responseTime, acceptedTime) {
+            const fastThreshold = acceptedTime * 0.85;
+            const slowThreshold = acceptedTime * 1.15;
+
+            if (responseTime < fastThreshold) {
+                fastCount++;
+                checkpointFastCount++; // ✅ Track for checkpoint
+            } else if (responseTime > slowThreshold) {
+                slowCount++;
+                checkpointSlowCount++; // ✅ Track for checkpoint
+            } else {
+                avgCount++;
+                checkpointAvgCount++; // ✅ Track for checkpoint
+            }
+        }
+
+        function getAdaptiveQuestions(confidencePercentage) {
+            const easyQuestions = allQuestions.filter(q => q.difficulty === 1);
+            const mediumQuestions = allQuestions.filter(q => q.difficulty === 2);
+            const hardQuestions = allQuestions.filter(q => q.difficulty === 3);
+
+            let selectedQuestions = [];
+
+            if (confidencePercentage < 40) {
+                selectedQuestions = [
+                    ...shuffleArray(easyQuestions).slice(0, Math.ceil(easyQuestions.length * 0.7)),
+                    ...shuffleArray(mediumQuestions).slice(0, Math.ceil(mediumQuestions.length * 0.25)),
+                    ...shuffleArray(hardQuestions).slice(0, Math.ceil(hardQuestions.length * 0.05))
+                ];
+            } else if (confidencePercentage < 70) {
+                selectedQuestions = [
+                    ...shuffleArray(easyQuestions).slice(0, Math.ceil(easyQuestions.length * 0.3)),
+                    ...shuffleArray(mediumQuestions).slice(0, Math.ceil(mediumQuestions.length * 0.5)),
+                    ...shuffleArray(hardQuestions).slice(0, Math.ceil(hardQuestions.length * 0.2))
+                ];
+            } else {
+                selectedQuestions = [
+                    ...shuffleArray(easyQuestions).slice(0, Math.ceil(easyQuestions.length * 0.1)),
+                    ...shuffleArray(mediumQuestions).slice(0, Math.ceil(mediumQuestions.length * 0.3)),
+                    ...shuffleArray(hardQuestions).slice(0, Math.ceil(hardQuestions.length * 0.6))
+                ];
+            }
+
+            return selectedQuestions.length ? shuffleArray(selectedQuestions) : shuffleArray([...allQuestions]);
+        }
+
+        // Fisher-Yates shuffle algorithm
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Load quiz data from JSON file
+        async function loadQuizData() {
+            try {
+                const response = await fetch('question_bank_real_mixed_answers.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const selectedTopic = urlParams.get('topic');
+                const userConfidence = parseInt(urlParams.get('confidence')) || 50;
+
+                if (!selectedTopic) {
+                    throw new Error('No topic selected. Please choose a topic from the Question Bank.');
+                }
+
+                // ✅ Handle "ALL" option
+                if (selectedTopic === 'ALL') {
+                    allQuestions = [];
+                    for (const topic in data) {
+                        if (Array.isArray(data[topic])) {
+                            allQuestions = allQuestions.concat(data[topic]);
+                        }
+                    }
+                } else if (data[selectedTopic]) {
+                    allQuestions = data[selectedTopic];
+                } else {
+                    throw new Error('Topic not found. Please choose a valid topic from the Question Bank.');
+                }
+
+                if (allQuestions && allQuestions.length > 0) {
+                    quizData = shuffleArray([...allQuestions]);
+                    document.getElementById('total-questions').textContent = quizData.length;
+                    
+                    setInitialConfidence(userConfidence);
+                    
+                    startQuizTimer();
+                    loadQuestion();
+                } else {
+                    throw new Error('No questions found for the selected topic.');
+                }
+            } catch (error) {
+                console.error('Error loading quiz data:', error);
+                document.getElementById('question').textContent = 'Error loading quiz questions: ' + error.message;
+            }
+        }
+
+        function setInitialConfidence(confidencePercentage) {
+            const confidenceFill = document.getElementById('confidence-fill');
+            const confidenceValue = document.getElementById('confidence-value');
+            
+            if (confidenceFill) {
+                confidenceFill.style.width = confidencePercentage + '%';
+            }
+            
+            if (confidenceValue) {
+                confidenceValue.textContent = confidencePercentage + '%';
+            }
+            
+            // Set color based on confidence level
+            if (confidenceFill) {
+                if (confidencePercentage < 40) {
+                    confidenceFill.style.background = 'linear-gradient(90deg, #ff6b6b, #ff8787)';
+                } else if (confidencePercentage < 70) {
+                    confidenceFill.style.background = 'linear-gradient(90deg, #ffa500, #ffb732)';
+                } else {
+                    confidenceFill.style.background = 'linear-gradient(90deg, #4CAF50, #66bb6a)';
+                }
+            }
+            
+            // Set totalConfidence to match the starting point
+            totalConfidence = (confidencePercentage - 50) / 5;
+        }
+
+        function loadQuestion() {
+            if (!quizData || quizData.length === 0) {
+                console.error('No quiz data available');
+                return;
+            }
+            
+            questionStartTime = Date.now();
+            selectedAnswerIndex = null;
+            isAnswerSubmitted = false;
+            answerChangeCount = 0;
+            
+            const questionEl = document.getElementById('question');
+            const answersEl = document.getElementById('answers');
+            const submitBtn = document.getElementById('submit-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            questionEl.textContent = quizData[currentQuestion].stem;
+            answersEl.innerHTML = '';
+            submitBtn.style.display = 'inline-block';
+            submitBtn.disabled = true;
+            nextBtn.style.display = 'none';
+
+            quizData[currentQuestion].options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'answer-btn';
+                btn.textContent = option;
+                btn.onclick = () => selectAnswer(index);
+                answersEl.appendChild(btn);
+            });
+
+            updateProgressBar();
+            startQuizTimer(); // ✅ Resume timer when new question loads
+        }
+
+        function updateProgressBar() {
+            const progressFill = document.getElementById('progress-fill');
+            const currentQuestionEl = document.getElementById('current-question');
+            const totalQuestionsEl = document.getElementById('total-questions');
+
+            currentQuestionEl.textContent = currentQuestion + 1;
+            totalQuestionsEl.textContent = quizData.length;
+
+            const progressPercentage = ((currentQuestion + 1) / quizData.length) * 100;
+            progressFill.style.width = progressPercentage + '%';
+        }
+
+        function selectAnswer(index) {
+            console.log('Answer selected:', index);
+            
+            if (isAnswerSubmitted) return;
+
+            const buttons = document.querySelectorAll('.answer-btn');
+            
+            if (selectedAnswerIndex !== null && selectedAnswerIndex !== index) {
+                answerChangeCount++;
+                totalAnswerChanges++; // ✅ Track total changes across all questions
+            }
+            
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            buttons[index].classList.add('selected');
+            selectedAnswerIndex = index;
+            
+            document.getElementById('submit-btn').disabled = false;
+            
+            console.log('selectedAnswerIndex is now:', selectedAnswerIndex);
+        }
+
+        function submitAnswer() {
+            console.log('Submit button clicked');
+            
+            if (selectedAnswerIndex === null || isAnswerSubmitted) {
+                console.log('Submission blocked');
+                return;
+            }
+            
+            pauseQuizTimer();
+            isAnswerSubmitted = true;
+            
+            const responseTime = (Date.now() - questionStartTime) / 1000;
+            responseTimes.push(responseTime);
+            
+            const buttons = document.querySelectorAll('.answer-btn');
+            const submitBtn = document.getElementById('submit-btn');
+            
+            // Convert letter answer (A, B, C, D) to index (0, 1, 2, 3)
+            const answerLetter = quizData[currentQuestion].answer;
+            const correctAnswerIndex = answerLetter.charCodeAt(0) - 'A'.charCodeAt(0);
+
+            buttons.forEach((btn, index) => {
+                btn.disabled = true;
+                btn.classList.remove('selected');
+                if (index === correctAnswerIndex) {
+                    btn.classList.add('correct');
+                } else if (index === selectedAnswerIndex) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            if (selectedAnswerIndex === correctAnswerIndex) {
+                score++;
+            }
+
+            const acceptedTime = getAcceptedTimeSeconds(quizData[currentQuestion]);
+            updateTimingCounters(responseTime, acceptedTime);
+
+            updateConfidence(correctAnswerIndex === selectedAnswerIndex, responseTime, answerChangeCount);
+
+            submitBtn.style.display = 'none';
+            document.getElementById('next-btn').style.display = 'inline-block';
+            
+            console.log('Submit completed successfully');
+        }
+
+        function updateConfidence(isCorrect, responseTime, changeCount) {
+            const avgTime = responseTimes.length > 0 
+                ? responseTimes.reduce((a, b) => a + b, 0) / responseTimes.length 
+                : responseTime;
+            
+            const timeDifference = (responseTime - avgTime) / avgTime;
+            
+            // Penalty for changing answers (reduces confidence)
+            const changePenalty = changeCount * 0.3;
+            
+            if (isCorrect) {
+                // True confidence: base increase + bonus for being faster than average - penalty for changes
+                totalConfidence += (1 - timeDifference * 0.5) - changePenalty;
+            } else {
+                // False confidence: decrease, especially if answered quickly (overconfident) - additional penalty for changes
+                totalConfidence -= (1 + Math.max(-timeDifference * 0.5, 0)) + changePenalty;
+            }
+            
+            const confidencePercentage = Math.max(0, Math.min(100, 50 + totalConfidence * 5));
+            
+            const confidenceFill = document.getElementById('confidence-fill');
+            const confidenceValue = document.getElementById('confidence-value');
+            
+            confidenceFill.style.width = confidencePercentage + '%';
+            confidenceValue.textContent = Math.round(confidencePercentage) + '%';
+            
+            if (confidencePercentage < 40) {
+                confidenceFill.style.background = 'linear-gradient(90deg, #ff6b6b, #ff8787)';
+            } else if (confidencePercentage < 70) {
+                confidenceFill.style.background = 'linear-gradient(90deg, #ffa500, #ffb732)';
+            } else {
+                confidenceFill.style.background = 'linear-gradient(90deg, #4CAF50, #66bb6a)';
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            console.log('nextQuestion - currentQuestion:', currentQuestion, 'modulo:', currentQuestion % 10);
+            
+            if (currentQuestion < quizData.length) {
+                // ✅ Show checkpoint after every 10 questions
+                if (currentQuestion % 10 === 0) {
+                    console.log('Showing checkpoint at question', currentQuestion);
+                    showCheckpoint();
+                } else {
+                    loadQuestion();
+                }
+            } else {
+                showResults();
+            }
+        }
+
+        function showCheckpoint() {
+            console.log('Checkpoint displayed');
+            
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('answers').style.display = 'none';
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'none';
+            
+            const checkpointEl = document.createElement('div');
+            checkpointEl.id = 'checkpoint';
+            checkpointEl.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                z-index: 1000;
+                text-align: center;
+                max-width: 700px;
+                max-height: 90vh;
+                overflow-y: auto;
+            `;
+            
+            const currentConfidence = Math.max(0, Math.min(100, 50 + totalConfidence * 5));
+            const totalTimeSeconds = Math.floor((Date.now() - quizStartTime) / 1000);
+            const minutes = String(Math.floor(totalTimeSeconds / 60)).padStart(2, '0');
+            const seconds = String(totalTimeSeconds % 60).padStart(2, '0');
+            
+            // ✅ Use checkpoint counters
+            const totalCheckpointQuestions = checkpointFastCount + checkpointAvgCount + checkpointSlowCount;
+            const fastPercent = totalCheckpointQuestions > 0 ? (checkpointFastCount / totalCheckpointQuestions) * 100 : 0;
+            const avgPercent = totalCheckpointQuestions > 0 ? (checkpointAvgCount / totalCheckpointQuestions) * 100 : 0;
+            const slowPercent = totalCheckpointQuestions > 0 ? (checkpointSlowCount / totalCheckpointQuestions) * 100 : 0;
+            
+            console.log('Checkpoint - Fast:', checkpointFastCount, 'Avg:', checkpointAvgCount, 'Slow:', checkpointSlowCount);
+            
+            checkpointEl.innerHTML = `
+                <h2>🎯 Checkpoint - ${currentQuestion} of ${quizData.length} Questions</h2>
+                
+                <div class="checkpoint-stats">
+                    <div class="checkpoint-stat">
+                        <h3>Current Score</h3>
+                        <p class="checkpoint-value">${score}/${currentQuestion}</p>
+                    </div>
+                    <div class="checkpoint-stat">
+                        <h3>Confidence Level</h3>
+                        <p class="checkpoint-value">${Math.round(currentConfidence)}%</p>
+                    </div>
+                    <div class="checkpoint-stat">
+                        <h3>Answer Changes</h3>
+                        <p class="checkpoint-value">${totalAnswerChanges}</p>
+                    </div>
+                    <div class="checkpoint-stat">
+                        <h3>Time Elapsed</h3>
+                        <p class="checkpoint-value">${minutes}:${seconds}</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px; text-align: left;">Response Time Analysis</h3>
+                <div class="checkpoint-timing">
+                    <div class="checkpoint-bar-container">
+                        <div class="checkpoint-bar-label">
+                            <span>Fast</span>
+                            <span>${checkpointFastCount}</span>
+                        </div>
+                        <div class="checkpoint-bar">
+                            <div class="checkpoint-bar-fill fast" style="width: ${fastPercent}%;">${checkpointFastCount}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkpoint-bar-container">
+                        <div class="checkpoint-bar-label">
+                            <span>Average</span>
+                            <span>${checkpointAvgCount}</span>
+                        </div>
+                        <div class="checkpoint-bar">
+                            <div class="checkpoint-bar-fill average" style="width: ${avgPercent}%;">${checkpointAvgCount}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkpoint-bar-container">
+                        <div class="checkpoint-bar-label">
+                            <span>Slow</span>
+                            <span>${checkpointSlowCount}</span>
+                        </div>
+                        <div class="checkpoint-bar">
+                            <div class="checkpoint-bar-fill slow" style="width: ${slowPercent}%;">${checkpointSlowCount}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="continueQuiz()" style="
+                    padding: 12px 30px;
+                    background: #667eea;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    margin-top: 25px;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='#764ba2'" onmouseout="this.style.background='#667eea'">
+                    Continue Quiz
+                </button>
+            `;
+            
+            document.body.appendChild(checkpointEl);
+        }
+
+        function continueQuiz() {
+            const checkpoint = document.getElementById('checkpoint');
+            if (checkpoint) checkpoint.remove();
+            
+            checkpointFastCount = 0;
+            checkpointAvgCount = 0;
+            checkpointSlowCount = 0;
+            
+            document.getElementById('question').style.display = 'block';
+            document.getElementById('answers').style.display = 'block';
+            document.getElementById('submit-btn').style.display = 'inline-block';
+            document.getElementById('next-btn').style.display = 'none';
+            
+            loadQuestion();
+        }
+
+        function showResults() {
+            quizEndTime = Date.now();  // ✅ Make sure this is set
+            stopQuizTimer();
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('answers').style.display = 'none';
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'none';
+            
+            const resultsEl = document.getElementById('results');
+            resultsEl.style.display = 'block';
+            
+            document.getElementById('score').textContent = score;
+            document.getElementById('total').textContent = quizData.length;
+            
+            const finalConfidence = Math.max(0, Math.min(100, 50 + totalConfidence * 5));
+            document.getElementById('final-confidence').textContent = Math.round(finalConfidence) + '%';
+            document.getElementById('final-confidence-box').textContent = Math.round(finalConfidence) + '%';
+
+            document.getElementById('answer-changes-display').textContent = totalAnswerChanges;
+            document.getElementById('answer-changes-box').textContent = totalAnswerChanges;
+
+            const totalTimeSeconds = Math.floor((quizEndTime - quizStartTime) / 1000);
+            const minutes = String(Math.floor(totalTimeSeconds / 60)).padStart(2, '0');
+            const seconds = String(totalTimeSeconds % 60).padStart(2, '0');
+            document.getElementById('total-time-display').textContent = `${minutes}:${seconds}`;
+            document.getElementById('total-time-box').textContent = `${minutes}:${seconds}`;
+
+            console.log('Final Counters - Fast:', fastCount, 'Avg:', avgCount, 'Slow:', slowCount);
+
+            const totalQuestions = quizData.length;
+            const fastPercent = totalQuestions > 0 ? (fastCount / totalQuestions) * 100 : 0;
+            const avgPercent = totalQuestions > 0 ? (avgCount / totalQuestions) * 100 : 0;
+            const slowPercent = totalQuestions > 0 ? (slowCount / totalQuestions) * 100 : 0;
+
+            document.getElementById('fast-count-display').textContent = fastCount;
+            document.getElementById('avg-count-display').textContent = avgCount;
+            document.getElementById('slow-count-display').textContent = slowCount;
+
+            document.getElementById('fast-bar').style.width = fastPercent + '%';
+            document.getElementById('avg-bar').style.width = avgPercent + '%';
+            document.getElementById('slow-bar').style.width = slowPercent + '%';
+
+            document.getElementById('fast-bar').textContent = fastCount;
+            document.getElementById('avg-bar').textContent = avgCount;
+            document.getElementById('slow-bar').textContent = slowCount;
+        }
+
+        // Load quiz data from JSON file
+        async function loadQuizData() {
+            try {
+                const response = await fetch('question_bank_real_mixed_answers.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const selectedTopic = urlParams.get('topic');
+                const userConfidence = parseInt(urlParams.get('confidence')) || 50;
+
+                if (!selectedTopic) {
+                    throw new Error('No topic selected. Please choose a topic from the Question Bank.');
+                }
+
+                // ✅ Handle "ALL" option
+                if (selectedTopic === 'ALL') {
+                    allQuestions = [];
+                    for (const topic in data) {
+                        if (Array.isArray(data[topic])) {
+                            allQuestions = allQuestions.concat(data[topic]);
+                        }
+                    }
+                } else if (data[selectedTopic]) {
+                    allQuestions = data[selectedTopic];
+                } else {
+                    throw new Error('Topic not found. Please choose a valid topic from the Question Bank.');
+                }
+
+                if (allQuestions && allQuestions.length > 0) {
+                    quizData = shuffleArray([...allQuestions]);
+                    document.getElementById('total-questions').textContent = quizData.length;
+                    
+                    setInitialConfidence(userConfidence);
+                    
+                    startQuizTimer();
+                    loadQuestion();
+                } else {
+                    throw new Error('No questions found for the selected topic.');
+                }
+            } catch (error) {
+                console.error('Error loading quiz data:', error);
+                document.getElementById('question').textContent = 'Error loading quiz questions: ' + error.message;
+            }
+        }
+
+        // Initialize quiz by loading data
+        loadQuizData();
+    </script>
+</body>
+</html>
