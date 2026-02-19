@@ -285,42 +285,16 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
             z-index: 100;
         }
-
-        .home-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            z-index: 100;
-        }
-
-        .home-btn:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
     </style>
 </head>
 <body>
-    <a class="home-btn" href="index.html">
-        <span class="home-icon">🏠</span>
-        <span class="home-text">Home</span>
-    </a>
+    <a class="home-btn" href="index.html">🏠 Home</a>
 
     <div class="timer-container">
         <span id="quiz-timer">00:00</span>
     </div>
 
     <div class="confidence-container">
-        <h3 class="confidence-title">Confidence Level</h3>
         <div class="confidence-bar">
             <div class="confidence-fill" id="confidence-fill"></div>
         </div>
@@ -427,9 +401,8 @@
             if (isTimerRunning) return;
             isTimerRunning = true;
             
-            if (!quizStartTime) {
-                quizStartTime = Date.now();
-            }
+            // Always reset start time when beginning/resuming a session
+            quizStartTime = Date.now();
 
             const timerEl = document.getElementById('quiz-timer');
             if (!timerEl) {
@@ -449,7 +422,7 @@
             // Update immediately
             const timerEl2 = document.getElementById('quiz-timer');
             if (timerEl2) {
-                const elapsed = Math.floor((Date.now() - quizStartTime) / 1000);
+                const elapsed = Math.floor((Date.now() - quizStartTime + elapsedBeforePause) / 1000);
                 const minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
                 const seconds = String(elapsed % 60).padStart(2, '0');
                 timerEl2.textContent = `${minutes}:${seconds}`;
@@ -459,6 +432,7 @@
         function pauseQuizTimer() {
             if (!isTimerRunning) return;
             isTimerRunning = false;
+            // Accumulate the time from this session before pausing
             elapsedBeforePause += Date.now() - quizStartTime;
             if (quizTimerInterval) clearInterval(quizTimerInterval);
             quizTimerInterval = null;
@@ -947,54 +921,6 @@
             document.getElementById('fast-bar').textContent = fastCount;
             document.getElementById('avg-bar').textContent = avgCount;
             document.getElementById('slow-bar').textContent = slowCount;
-        }
-
-        // Load quiz data from JSON file
-        async function loadQuizData() {
-            try {
-                const response = await fetch('question_bank_real_mixed_answers.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-
-                const urlParams = new URLSearchParams(window.location.search);
-                const selectedTopic = urlParams.get('topic');
-                const userConfidence = parseInt(urlParams.get('confidence')) || 50;
-
-                if (!selectedTopic) {
-                    throw new Error('No topic selected. Please choose a topic from the Question Bank.');
-                }
-
-                // ✅ Handle "ALL" option
-                if (selectedTopic === 'ALL') {
-                    allQuestions = [];
-                    for (const topic in data) {
-                        if (Array.isArray(data[topic])) {
-                            allQuestions = allQuestions.concat(data[topic]);
-                        }
-                    }
-                } else if (data[selectedTopic]) {
-                    allQuestions = data[selectedTopic];
-                } else {
-                    throw new Error('Topic not found. Please choose a valid topic from the Question Bank.');
-                }
-
-                if (allQuestions && allQuestions.length > 0) {
-                    quizData = shuffleArray([...allQuestions]);
-                    document.getElementById('total-questions').textContent = quizData.length;
-                    
-                    setInitialConfidence(userConfidence);
-                    
-                    startQuizTimer();
-                    loadQuestion();
-                } else {
-                    throw new Error('No questions found for the selected topic.');
-                }
-            } catch (error) {
-                console.error('Error loading quiz data:', error);
-                document.getElementById('question').textContent = 'Error loading quiz questions: ' + error.message;
-            }
         }
 
         // Initialize quiz by loading data
